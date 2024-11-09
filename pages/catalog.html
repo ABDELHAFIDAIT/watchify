@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+     <!-- <script src="../assets/css/output.css"></script> -->
+    <!-- <link href="../assets/css/output.css" rel="stylesheet"> -->
+
+</head>
+<body class="w-full">
+    
+ <!-- Header -->
+<header class="w-full bg-white flex justify-center h-[30vh]">
+  <div class="container flex items-center justify-between shadow-2xl w-[80%] mt-24 rounded-sm" >
+    <!-- Logo -->
+    <div class="">
+      <a href="#"><img class="w-auto h-auto" src="../images/Logo.png" alt=""></a>
+    </div>
+
+    <!-- Zone de recherche avec ombre -->
+    <div class="flex items-center w-full max-w-md mx-4 shadow-lg rounded-md">
+      <input 
+        type="text" 
+        placeholder="Rechercher" 
+        class="w-full px-4 py-2 text-gray-800 border-none rounded-l-md focus:outline-none"
+      />
+      <button 
+        class="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600"
+      >
+        🔍
+      </button>
+    </div>
+
+    <!-- Liens de navigation et icônes -->
+    <nav class="hidden md:flex items-center space-x-4">
+      <a href="#" class="text-gray-600 hover:text-blue-500">Accueil</a>
+      <a href="#" class="text-gray-600 hover:text-blue-500">Catalogue</a>
+      <a href="#" class="text-gray-600 hover:text-blue-500">À propos</a>
+      <a href="#" class="text-gray-600 hover:text-blue-500">🛒</a>
+    </nav>
+
+    <!-- Menu burger caché en mode desktop -->
+    <button class="md:hidden p-2 rounded-md focus:outline-none">
+      ☰
+    </button>
+  </div>
+</header>
+
+<!-- titre section -->
+<section >
+  <div class="w-full flex flex-col align-middle text-center my-8">
+    <h1 class="text-4xl font-extrabold text-gray-800">"Watchify: The Smart Choice"</h1>
+    <h3>Stay Ahead with the Best Smartwatches</h3>
+  </div>
+</section>
+<!-- fin de section titre -->
+
+<!-- section information -->
+ <section>
+<!-- Section avec grille sous le titre -->
+
+
+<!-- Grid principale -->
+<div class="w-full flex justify-center">
+  <div class="container w-[80%] grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- Colonne d'information sur la montre -->
+    <div class="p-4 gap-8">
+      <h2 class="text-4xl font-bold text-blue-800 mb-4">Exquisite Watches</h2>
+      <h2 class="text-2xl font-bold text-black mb-4"><span class="text-blue-600">Choose Luxury,</span> Choose Us</h2>
+      <p class="text-gray-600 mb-2">Discover the Perfect Watch 
+        for Every Occasion and Elevate Your Style 
+        with Timeless Elegance and Precision Craftsmanship - watch
+      </p>
+      <div class="flex">
+      <h1 class="text-4xl font-bold text-blue-800 m-2">$430.00</h1>
+      <a href="#"><button class="bg-blue-700 rounded-md	m-2 p-2">Ajouter au panier</button></a>
+      </div>
+    </div>
+
+    <!-- Colonne du slider de la montre -->
+    <div class="p-4 grid place-items-center bg-white rounded-md ">
+      <div class="w-full h-[300px] flex justify-center items-center">
+        <!-- Slider ou image -->
+        <img src="../images/png/pngwing.com (4).png" alt="Smartwatch" class="w-full h-full object-cover rounded-md">
+      </div>
+    </div>
+  </div>
+</div>
+
+ </section>
+<!-- fin de section information -->
+
+<!-- section caroussel -->
+  <section>
+  </section>
+<!-- fin du section caroussel -->
+
+<!-- trier -->
+
+<section>
+<!-- Section Filtrer et Trier -->
+<div class="w-full flex justify-center my-8">
+  <div class="container w-[80%] flex justify-between items-center space-x-4">
+    
+    <!-- Label Filtrer par -->
+    <div class="flex items-center space-x-2">
+      <label for="filter" class="text-gray-700 font-semibold">Filtrer par :</label>
+     
+    </div>
+
+    <!-- Label Trier par -->
+    <div class="flex items-center space-x-2">
+      <label for="sort" class="text-gray-700 font-semibold">Trier par :</label>
+      <select id="sort" class="px-4 py-2 border rounded-md text-gray-700">
+        <option>Prix</option>
+        <option>Nom</option>
+        <option>Quantité</option>
+      </select>
+    </div>
+    
+  </div>
+</div>
+
+</section>
+<!-- fin de trier -->
+<section class="flex mt-8 space-x-8">
+  <!-- Section Filtrage par Marque -->
+  <div class="w-[20%] p-4 border rounded-md shadow-lg">
+    <h2 class="text-lg font-bold text-gray-700 mb-4">Filtrer par Marque</h2>
+    <div class="space-y-4">
+
+      <!-- Checkbox pour chaque marque -->
+      <div class="flex items-center space-x-3">
+        <input type="checkbox" id="samsung" name="marque" class="form-checkbox h-5 w-5 text-blue-600">
+        <label for="samsung" class="flex items-center space-x-2">
+          <img src="../images/png/samsung.png" alt="Samsung" class="w-6 h-6">
+          <span class="text-gray-700">Samsung</span>
+        </label>
+      </div>
+       <!-- Checkbox pour chaque marque -->
+    <div class="flex items-center space-x-3">
+      <input type="checkbox" id="samsung" name="marque" class="form-checkbox h-5 w-5 text-blue-600">
+      <label for="samsung" class="flex items-center space-x-2">
+        <img src="../images/png/samsung.png" alt="Samsung" class="w-6 h-6">
+        <span class="text-gray-700">Samsung</span>
+      </label>
+    </div>
+
+    <div class="flex items-center space-x-3">
+      <input type="checkbox" id="apple"  name="marque" class="form-checkbox h-5 w-5 text-blue-600">
+      <label for="apple" class="flex items-center space-x-2">
+        <img src="../images/png/apple-logo.png" alt="Apple" class="w-6 h-6">
+        <span class="text-gray-700">Apple</span>
+      </label>
+    </div>
+
+    <div class="flex items-center space-x-3">
+      <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600">
+      <label for="oraimo" class="flex items-center space-x-2">
+        <img src="../images/png/huawei.png" alt="Oraimo" class="w-6 h-6">
+        <span class="text-gray-700">Oraimo</span>
+      </label>
+    </div>
+    <div class="flex items-center space-x-3">
+      <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600">
+      <label for="oraimo" class="flex items-center space-x-2">
+        <img src="../images/png/huawei.png" alt="Oraimo" class="w-6 h-6">
+        <span class="text-gray-700">Oraimo</span>
+      </label>
+    </div>
+    <div class="flex items-center space-x-3">
+      <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600">
+      <label for="oraimo" class="flex items-center space-x-2">
+        <img src="../images/png/huawei.png" alt="Oraimo" class="w-6 h-6">
+        <span class="text-gray-700">Oraimo</span>
+      </label>
+    </div>
+    <div class="flex items-center space-x-3">
+      <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600">
+      <label for="oraimo" class="flex items-center space-x-2">
+        <img src="../images/png/huawei.png" alt="Oraimo" class="w-6 h-6">
+        <span class="text-gray-700">Oraimo</span>
+      </label>
+    </div>
+    <div class="flex items-center space-x-3">
+      <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600">
+      <label for="oraimo" class="flex items-center space-x-2">
+        <img src="../images/png/huawei.png" alt="Oraimo" class="w-6 h-6">
+        <span class="text-gray-700">Oraimo</span>
+      </label>
+    </div>
+    <div class="flex items-center space-x-3">
+      <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600">
+      <label for="oraimo" class="flex items-center space-x-2">
+        <img src="../images/png/huawei.png" alt="Oraimo" class="w-6 h-6">
+        <span class="text-gray-700">Oraimo</span>
+      </label>
+    </div>
+    <div class="flex items-center space-x-3">
+      <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600">
+      <label for="oraimo" class="flex items-center space-x-2">
+        <img src="../images/png/huawei.png" alt="Oraimo" class="w-6 h-6">
+        <span class="text-gray-700">Oraimo</span>
+      </label>
+    </div>
+    <div class="flex items-center space-x-3">
+      <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600">
+      <label for="oraimo" class="flex items-center space-x-2">
+        <img src="../images/png/huawei.png" alt="Oraimo" class="w-6 h-6">
+        <span class="text-gray-700">Oraimo</span>
+      </label>
+    </div>
+    <div class="flex items-center space-x-3">
+      <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600">
+      <label for="oraimo" class="flex items-center space-x-2">
+        <img src="../images/png/huawei.png" alt="Oraimo" class="w-6 h-6">
+        <span class="text-gray-700">Oraimo</span>
+      </label>
+    </div>
+    <div class="flex items-center space-x-3">
+      <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600">
+      <label for="oraimo" class="flex items-center space-x-2">
+        <img src="../images/png/huawei.png" alt="Oraimo" class="w-6 h-6">
+        <span class="text-gray-700">Oraimo</span>
+      </label>
+    </div>
+    </div>
+  </div>
+
+  <!-- Section des Smartwatches -->
+  <div class="w-[75%] p-4">
+    <h2 class="text-xl font-semibold text-gray-700 mb-4">Nos Smartwatches</h2>
+
+    <!-- Grid de 12 smartwatches -->
+    <div class="grid grid-cols-4 gap-6">
+    
+         <!-- Card 1 -->
+         <div class="border rounded-lg shadow-md p-4">
+          <img src="../images/png/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
+          <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
+          <p class="text-sm text-gray-500">Prix: 199,99€</p>
+          <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+        </div>
+         <div class="border rounded-lg shadow-md p-4">
+          <img src="../images/png/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
+          <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
+          <p class="text-sm text-gray-500">Prix: 199,99€</p>
+          <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+        </div>
+         <div class="border rounded-lg shadow-md p-4">
+          <img src="../images/png/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
+          <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
+          <p class="text-sm text-gray-500">Prix: 199,99€</p>
+          <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+        </div>
+         <div class="border rounded-lg shadow-md p-4">
+          <img src="../images/png/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
+          <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
+          <p class="text-sm text-gray-500">Prix: 199,99€</p>
+          <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+        </div>
+         <div class="border rounded-lg shadow-md p-4">
+          <img src="../images/png/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
+          <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
+          <p class="text-sm text-gray-500">Prix: 199,99€</p>
+          <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+        </div>
+         <div class="border rounded-lg shadow-md p-4">
+          <img src="../images/png/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
+          <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
+          <p class="text-sm text-gray-500">Prix: 199,99€</p>
+          <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+        </div>
+         <div class="border rounded-lg shadow-md p-4">
+          <img src="../images/png/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
+          <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
+          <p class="text-sm text-gray-500">Prix: 199,99€</p>
+          <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+        </div>
+         <div class="border rounded-lg shadow-md p-4">
+          <img src="../images/png/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
+          <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
+          <p class="text-sm text-gray-500">Prix: 199,99€</p>
+          <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+
+ <!-- Pagination -->
+ <div class="flex justify-center mt-8">
+  <nav class="inline-flex rounded-md shadow-sm -space-x-px">
+    <!-- Previous Button -->
+    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 rounded-l-md hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+      Previous
+    </a>
+
+    <!-- Page Numbers -->
+    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+      1
+    </a>
+    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+      2
+    </a>
+    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+      3
+    </a>
+
+    <!-- Next Button -->
+    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 rounded-r-md hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+      Next
+    </a>
+  </nav>
+</div>
+</div>
+
+<!-- fin du pagination  -->
+
+
+ <!-- footer -->
+
+<!-- fin du footer -->
+</body>
+</html>
