@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../assets/css/output.css">
+    <title>Watchify</title>
+</head>
+
+<body>
+
+    <Header
+        class="flex flex-wrap items-center justify-between py-3 px-5 my-4 mx-auto rounded-md bg-white drop-shadow-md"
+        style="max-width: 1000px;">
+        <div class="logo w-[70px] h-[50px]">
+            <img class="w-[100%] h-[100%]" src="../assets/img/watchify.png" alt="watchify">
+        </div>
+        <form action="/"
+            class="bg-slate-100 rounded-md py-1 pr-3 flex items-center justify-between w-[30%] drop-shadow-sm">
+            <input type="search"
+                class="bg-transparent w-[90%] h-[25px] rounded-md pl-3 py-0.5 outline-none text-xs placeholder:text-xs"
+                placeholder="Recherche..">
+            <i class="fa fa-search cursor-pointer"></i>
+        </form>
+        <nav>
+            <ul class="flex items-center">
+                <li class="mr-5"><a
+                        class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
+                        href="accueil.html">Accueil</a></li>
+                <li class="mr-5"><a
+                        class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
+                        href="catlogue.html">Catalogue</a></li>
+                <li class="mr-7"><a
+                        class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
+                        href="Apropos.html">Apropos</a></li>
+                <li class="bg-slate-100 p-1 rounded-md drop-shadow-sm"><a href="panier.html"><i
+                            class="fa-solid fa-bag-shopping text-lg hover:text-blue-600 transition-colors"
+                            id="shop-bag"></i></a>
+                    <span id="Product-counter" class="text-xs text-blue-600">0</span>
+                </li>
+            </ul>
+        </nav>
+    </Header>
+
+
+    <section id="d-product-details">
+        <div id="product-galerie">
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <script src="../tailwind.config.js"></script>
+</body>
+
+</html>
