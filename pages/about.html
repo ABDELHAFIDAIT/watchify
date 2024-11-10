@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A PROPOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'lato': ['Lato', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins">
+    <!-- Main Container -->
+    <div class="min-h-screen bg-white">
+        <!-- Navigation Bar -->
+        <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <!-- Logo -->
+                    <div class="flex items-center space-x-2">
+                        <img src="/assets/img/logo.png" class="h-10 w-10 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="7"></circle>
+                            <polyline points="12 9 12 12 13.5 13.5"></polyline>
+                            <path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path>
+                    </img>
+                        <span class="text-xl font-bold">Watchify</span>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#" class="text-gray-900 hover:text-blue-500 transition-colors">Accueil</a>
+                        <a href="#" class="text-gray-900 hover:text-blue-500 transition-colors">Catalogue</a>
+                        <a href="#" class="text-gray-900 hover:text-blue-500 transition-colors">A propos</a>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="hidden md:block relative w-64">
+                        <input type="text" placeholder="Rechercher..." class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <img src="/assets/img/search_logo.png" class="h-5 w-5 absolute right-3 top-2.5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </img>
+                    </div>
+
+                    <!-- Cart Button -->
+                    <div class="relative">
+                        <button class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors">
+                            <img src="/assets/img/car_ panier.png" class="h-6 w-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </img>
+                            <span class="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+         <!--HISTORY-->
+        <section class="pt-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Image Section -->
+                    <div class="relative">
+                        <img src="/assets/img/watch_main.png" alt="Smart Watch">
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="space-y-8">
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="w-2 h-16 bg-blue-500 rounded mr-4"></div>
+                                <h1 class="text-4xl font-bold text-blue-500 font-lato">NOTRE HISTOIRE</h1>
+                            </div>
+                            <p class="text-xl text-gray-800 leading-relaxed font-lato">
+                                Chez Watchify, notre aventure a commencé avec une passion pour la technologie et le design. 
+                                Fondée en 2024, notre mission a toujours été de créer des montres intelligentes qui allient 
+                                innovation, élégance et fonctionnalité. Chaque modèle que nous concevons est un témoignage 
+                                de notre engagement à offrir le meilleur à nos clients.
+                            </p>
+                        </div>
+                        <button class="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                            En savoir plus
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Mission-->
+        <section class="pt-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                         <!-- Image Section -->
+                         <div class="relative">
+                            <img src="/assets/img/watch_main.png" alt="Smart Watch">
+                        </div>
+                    <!-- Content Section -->
+                    <div class="space-y-8">
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="w-2 h-16 bg-blue-500 rounded mr-4"></div>
+                                <h1 class="text-4xl font-bold text-blue-500 font-lato">NOTRE MISSION</h1>
+                            </div>
+                            <p class="text-xl text-gray-800 leading-relaxed font-lato">
+                                Chez Watchify, nous croyons que la technologie doit enrichir notre quotidien.
+                                 Notre objectif est de transformer chaque montre en un compagnon de vie,
+                                capable de s'adapter à votre style et à vos besoins.
+                            </p>
+                        </div>
+                        <button class="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                            En savoir plus
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
