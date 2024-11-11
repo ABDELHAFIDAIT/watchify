@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body class="w-full">
@@ -28,7 +29,7 @@
      <ul class="flex items-center" id="nav-menu">
          <li class="link mr-5"><a
                  class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
-                 href="accueil.html">Accueil</a></li>
+                 href="index.html">Accueil</a></li>
          <li class="link mr-5"><a
                  class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
                  href="catlogue.html">Catalogue</a></li>
@@ -50,17 +51,16 @@
 
 </Header>
 
-<section class="mt-[10%]">
+<section class="mt-[150px]">
   <div class="w-full flex flex-col align-middle text-center my-8">
     <h1 class="text-5xl font-extrabold text-gray-800">"Watchify: The Smart Choice"</h1>
     <h3 class="mt-5">Stay Ahead with the Best Smartwatches</h3>
   </div>
 </section>
 
-<section class="grid mt-8 px-4 gap-10">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mx-10">
-    <!-- Left Column: Text Content -->
-    <div class="flex flex-col items-center text-center justify-center">
+    <!-- first div -->
+    <div class="flex flex-col items-center text-center justify-center md:order-1 order-2 gap-10">
       <h1 class="text-5xl font-semibold text-blue-700 mb-2">Exquisite Watches</h1>
       <h1 class="text-4xl font-semibold text-blue-500 mb-2">
         Choose Luxury, <span class="text-black">Choose Us</span>
@@ -76,41 +76,40 @@
       </div>
     </div>
 
-    <!-- Right Column: Image and Controls -->
-    <div class="flex items-center justify-between w-full">
+    <!-- second div -->
+    <div class="flex items-center justify-between w-full md:order-2 order-1">
+      <!-- button next -->
       <button class="">
         <img src="../assets/img/Left.png" alt="Previous">
       </button>
-
+      <!-- main image -->
       <div class="flex flex-col items-center justify-center gap-5">
         <img src="../assets/img/pngwing.com (1).png" alt="Smartwatch Image 1" class="w-full h-full object-contain">
         <div class="h-[5px] w-1/2 bg-black rounded-[100%] blur-md self-center"></div>
       </div>
-
+      <!-- button prev -->
       <button class="">
         <img src="../assets/img/next.png" alt="Next">
       </button>
     </div>
+
   </div>
-</section>
 
-
-<!-- fin du section caroussel -->
-
-<!-- trier -->
 
 <section>
-<!-- Section Filtrer et Trier -->
 <div class="w-full flex justify-center my-8">
   <div class="container w-[80%] flex justify-between items-center space-x-4">
     
-    <!-- Label Filtrer par -->
     <div class="flex items-center space-x-2">
-      <label for="filter" class="text-gray-700 font-semibold">Filtrer par :</label>
-     
+      <label for="filter" class="text-gray-700 font-semibold sm:text-[16px]">Filtrer par :</label>
+      <select id="marque-select" name="marque" class="form-select w-full border border-gray-300 p-2 rounded block md:hidden">
+        <option value="">Select a brand</option>
+        <option value="samsung">Samsung</option>
+        <option value="apple">Apple</option>
+        <option value="oraimo">Oraimo</option>
+      </select>
     </div>
-
-    <!-- Label Trier par -->
+   
     <div class="flex items-center space-x-2">
       <label for="sort" class="text-gray-700 font-semibold">Trier par :</label>
       <select id="sort" class="px-4 py-2 border rounded-md text-gray-700">
@@ -124,13 +123,10 @@
 </div>
 
 </section>
-<!-- fin de trier -->
 <section class="flex mt-8 space-x-8">
-  <!-- Section Filtrage par Marque -->
-  <div class="p-4 border rounded-md shadow-lg w-1/5 ml-[10%]">
-    <div class="space-y-4">
+  <div class="p-4 border rounded-md shadow-lg w-1/5 ml-[10%] hidden md:block">
+    <div class="space-y-4 ">
 
-      <!-- Checkbox pour chaque marque -->
       <div class="flex items-center space-x-3">
         <input type="checkbox" id="samsung" name="marque" class="form-checkbox h-5 w-5 text-blue-600"  onclick="deselectOtherCheckboxes(this)">
         <label for="samsung" class="flex items-center space-x-2">
@@ -138,7 +134,6 @@
           <span class="text-gray-700">Samsung</span>
         </label>
       </div>
-       <!-- Checkbox pour chaque marque -->
     <div class="flex items-center space-x-3">
       <input type="checkbox" id="samsung" name="marque" class="form-checkbox h-5 w-5 text-blue-600"  onclick="deselectOtherCheckboxes(this)">
       <label for="samsung" class="flex items-center space-x-2">
@@ -229,12 +224,11 @@
   </div>
 
   <!-- Section des Smartwatches -->
-  <div class="w-[75%] p-4">
+  <div class="w-[75%] p-4 md:w-[100%]">
     <!-- Grid de 12 smartwatches -->
     <div class="grid grid-cols-4 gap-6">
-    
          <!-- Card 1 -->
-         <div class="border rounded-lg shadow-md p-4">
+         <div class="border rounded-lg shadow-md p-4 ">
           <img src="../assets/img/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
           <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
           <p class="text-sm text-gray-500">Prix: 199,99€</p>
@@ -332,4 +326,5 @@
 <!-- fin du footer -->
 </body>
 <script src="../assets/js/catalog.js"></script>
+<script src="../assets/js/main.js"></script>
 </html>
