@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchify - Panier</title>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body{
+            font-family: "Poppins";
+            height: 3000px;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="../assets/css/output.css">
+    <link rel="stylesheet" href="../assets/css/input.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    
+    <main>
+
+        <section class="mx-20 py-10">
+            <div class="flex items-center gap-3">
+                    <div class="w-5 h-14 bg-blue-600 rounded-sm"></div>
+                    <h1 class="font-bold text-blue-600 text-2xl">Panier (<span>3</span> Articles)</h1>
+            </div>
+
+            <div class="flex flex-col gap-3 my-10">
+                    <div class="flex items-center justify-between flex-wrap">
+                        <div class="flex  gap-5">
+                            <img class="w-32 h-32" src="../assets/img/watch.jpg" alt="SAMSUNG GALAXY WATCH 7">
+                            <div class="flex flex-col justify-around">
+                                <h1 class="font-bold text-lg">SAMSUNG GALAXY WATCH 7</h1>
+                                <h2 class="font-semibold text-xl text-red-600">199,99 $</h2>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <button class="font-medium text-lg px-4 py-2 rounded-s-sm bg-gray-200" type="button">-</button>
+                            <input class="font-medium text-lg py-2 bg-slate-200 text-center w-14" type="number" value="1" min="1" max="10">
+                            <button class="font-medium text-lg px-4 py-2 rounded-r-sm bg-gray-200" type="button">+</button>
+                        </div>
+                        <h1 class="font-medium text-xl">199,99 $</h1>
+                        <svg width="32px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 12V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    </div>
+                    <hr class="border-gray-400">
+                    <div class="flex items-center justify-between flex-wrap">
+                        <div class="flex  gap-5">
+                            <img class="w-32 h-32" src="../assets/img/watch.jpg" alt="SAMSUNG GALAXY WATCH 7">
+                            <div class="flex flex-col justify-around">
+                                <h1 class="font-bold text-lg">SAMSUNG GALAXY WATCH 7</h1>
+                                <h2 class="font-semibold text-xl text-red-600">199,99 $</h2>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <button class="font-medium text-lg px-4 py-2 rounded-s-sm bg-gray-200" type="button">-</button>
+                            <input class="font-medium text-lg py-2 bg-slate-200 text-center w-14" type="number" value="1" min="1" max="10">
+                            <button class="font-medium text-lg px-4 py-2 rounded-r-sm bg-gray-200" type="button">+</button>
+                        </div>
+                        <h1 class="font-medium text-xl">199,99 $</h1>
+                        <svg width="32px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 12V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    </div>
+                    <hr class="border-gray-400">
+                    <div class="flex items-center justify-between flex-wrap">
+                        <div class="flex  gap-5">
+                            <img class="w-32 h-32" src="../assets/img/watch.jpg" alt="SAMSUNG GALAXY WATCH 7">
+                            <div class="flex flex-col justify-around">
+                                <h1 class="font-bold text-lg">SAMSUNG GALAXY WATCH 7</h1>
+                                <h2 class="font-semibold text-xl text-red-600">199,99 $</h2>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <button class="font-medium text-lg px-4 py-2 rounded-s-sm bg-gray-200" type="button">-</button>
+                            <input class="font-medium text-lg py-2 bg-slate-200 text-center w-14" type="number" value="1" min="1" max="10">
+                            <button class="font-medium text-lg px-4 py-2 rounded-r-sm bg-gray-200" type="button">+</button>
+                        </div>
+                        <h1 class="font-medium text-xl">199,99 $</h1>
+                        <svg width="32px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 12V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    </div>
+                    <hr class="border-gray-400">
+            </div>
+
+            <div class="flex justify-between items-center flex-wrap gap-5 self-center">
+                    <div class="flex">
+                        <input class="bg-gray-100 px-5 py-2 border-gray-200 border-solid border rounded-s-md" type="text" placeholder="Code Promo">
+                        <button class="px-4 py-2 bg-blue-500 font-medium text-white rounded-r-md" type="button">OK</button>
+                    </div>
+                    <a href="#"><button class="px-7 py-2 bg-blue-600 text-white font-medium rounded-md">Continuer les Achats</button></a>
+            </div>
+        </section>
+
+        <section class="mx-20 py-10">
+            <div class="flex items-center gap-3">
+                <div class="w-5 h-14 bg-blue-600 rounded-sm"></div>
+                <h1 class="font-bold text-blue-600 text-2xl">Vous pourriez être intéressé par ...</h1>
+            </div>
+
+            <div class="flex items-center justify-center gap-3 py-10 flex-wrap">
+                <img src="../assets/img/watch.jpg" alt="">
+                <img src="../assets/img/watch.jpg" alt="">
+                <img src="../assets/img/watch.jpg" alt="">
+                <img src="../assets/img/watch.jpg" alt="">
+            </div>
+        </section>
+
+        <section class="mx-20 py-10">
+            <div class="flex items-center gap-3">
+                <div class="w-5 h-14 bg-blue-600 rounded-sm"></div>
+                <h1 class="font-bold text-blue-600 text-2xl">Confirmation de Commande</h1>
+            </div>
+
+            <div class="flex gap-10 mt-10 flex-wrap">
+                <div class="flex flex-col flex-1 bg-gray-100 px-5 py-5 gap-5 border border-gray-300 rounded-md h-min">
+                    <h1 class="text-2xl font-medium">Total du Panier</h1>
+                    <div class="flex flex-col gap-5 px-3">
+                        <div class="flex justify-between items-center">
+                            <h1>SAMSUNG GALAXY WATCH 7</h1>
+                            <h2 class="font-medium">x <span>1</span></h2>
+                            <h3 class="font-semibold">199,99 $</h3>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <h1>SAMSUNG GALAXY WATCH 7</h1>
+                            <h2 class="font-medium">x <span>1</span></h2>
+                            <h3 class="font-semibold">199,99 $</h3>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <h1>SAMSUNG GALAXY WATCH 7</h1>
+                            <h2 class="font-medium">x <span>1</span></h2>
+                            <h3 class="font-semibold">199,99 $</h3>
+                        </div>
+                    </div>
+                    <hr class="border-black">
+                    <div class="flex justify-between items-center px-3">
+                        <h1 class="text-xl font-semibold">Total</h1>
+                        <h2 class="font-semibold">599,97 $</h2>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-1">
+                    <form action="" class="flex flex-col">
+                        <label class="mb-1 ml-1" for="name">Nom Complet</label>
+                        <input class="py-2 rounded-md border border-gray-400 px-3 bg-gray-200 placeholder:text-gray-500" placeholder="Ex: Peter Johnson" type="text" name="name">
+
+                        <label class="mt-4 mb-1 ml-1" for="phone">Numéro de Téléphone</label>
+                        <input class="py-2 rounded-md border border-gray-400 px-3 bg-gray-200 placeholder:text-gray-500" placeholder="Ex: +212 612345678" type="tel" name="phone">
+
+                        <label class="mt-4 mb-1 ml-1" for="email">Adresse Email</label>
+                        <input class="py-2 rounded-md border border-gray-400 px-3 bg-gray-200 placeholder:text-gray-500" placeholder="Ex: j.peter@example.com" type="email" name="email">
+
+                        <label class="mt-4 mb-1 ml-1" for="adress">Adresse</label>
+                        <input class="py-2 rounded-md border border-gray-400 px-3 bg-gray-200 placeholder:text-gray-500" placeholder="Ex: street, neighberhood, city, country" type="text" name="adress">
+
+                        <button class="py-2 mt-4 bg-blue-600 text-white rounded-md" type="submit">Confirmer la Commande</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="bg-blue-950 py-10">
+            <div class="mx-20 text-white flex justify-between items-center flex-wrap gap-5">
+                <div>
+                    <h1 class="text-3xl font-semibold mb-3">Notre Newsletter</h1>
+                    <p class="font-light text-sm">Recevoir  notre vouveaux produit et mise à jour</p>
+                </div>
+                <form class="flex border-none p-2 bg-white rounded-md">
+                    <input class="grow border-none outline-none px-5 text-black" type="email" name="" placeholder="Email Example ..">
+                    <button class="bg-blue-950 py-2 px-6 rounded-md" type="button">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    
+    </main>
+
+    <script src="../assets/js/panier.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
