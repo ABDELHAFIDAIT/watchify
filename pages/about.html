@@ -9,6 +9,8 @@
     <title>A PROPOS</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -323,7 +325,52 @@
                 </div>
             </div>
         </section>
-
+   
+         <!-- FAQ Section -->
+         <section class="py-20 bg-white" x-data="{ openFaq: null }">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center mb-12">
+                    <div class="w-2 h-16 bg-blue-500 rounded mr-4"></div>
+                    <h2 class="text-4xl font-bold text-blue-500">FAQ</h2>
+                </div>
+    
+                <div class="space-y-4">
+                    <div class="border border-gray-200 rounded-lg">
+                        <button class="w-full px-6 py-4 flex justify-between items-center focus:outline-none"
+                                @click="openFaq = openFaq === 1 ? null : 1">
+                            <span class="text-lg font-semibold text-gray-900">Quelles sont les fonctionnalités de base de vos montres intelligentes?</span>
+                            <svg class="w-5 h-5 text-blue-500 transform transition-transform duration-200"
+                                 :class="{'rotate-180': openFaq === 1}"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="px-6 overflow-hidden transition-all duration-300"
+                             :class="{'max-h-48 py-4': openFaq === 1, 'max-h-0': openFaq !== 1}"
+                             x-cloak>
+                            <p class="text-gray-600">Nos montres intelligentes offrent le suivi de la condition physique, les notifications smartphone, le moniteur cardiaque, le GPS intégré, et sont résistantes à l'eau.</p>
+                        </div>
+                    </div>
+    
+                    <div class="border border-gray-200 rounded-lg">
+                        <button class="w-full px-6 py-4 flex justify-between items-center focus:outline-none"
+                                @click="openFaq = openFaq === 2 ? null : 2">
+                            <span class="text-lg font-semibold text-gray-900">Quelle est la durée de vie de la batterie?</span>
+                            <svg class="w-5 h-5 text-blue-500 transform transition-transform duration-200"
+                                 :class="{'rotate-180': openFaq === 2}"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="px-6 overflow-hidden transition-all duration-300"
+                             :class="{'max-h-48 py-4': openFaq === 2, 'max-h-0': openFaq !== 2}"
+                             x-cloak>
+                            <p class="text-gray-600">La durée de vie de la batterie varie selon le modèle, mais en moyenne nos montres durent 3-5 jours avec une utilisation normale.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Newsletter -->
         <section class="bg-blue-950 py-10 px-4 sm:px-10">
             <div class="text-white flex md:justify-between justify-center items-center flex-wrap gap-5">
@@ -337,7 +384,6 @@
                 </form>
             </div>
         </section>
-
         <!-- footer-->
         <footer class="flex flex-col bg-black items-center py-8 md:px-20 px-10">
             <div class="flex justify-between flex-wrap gap-x-2 gap-y-5 text-white w-full">
