@@ -52,7 +52,13 @@
 
     </Header>
 
-
+    <style>
+        #d-quantite-input::-webkit-outer-spin-button,
+        #d-quantite-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
     <!--Product details-->
     <main class="flex gap-10 justify-center py-10" id="d-product-details" style="width: 100% ;margin-top: 100px">
         <section class="flex-col" id="d-product-galerie" style="width: 100%;">
@@ -74,29 +80,135 @@
             </div>
         </section>
 
-        <section class="w-[100%]" id="">
+        <section class="w-[100%]" id="product-informations">
             <h2 id="d-product-name" class="text-[2rem] font-semibold capitalize mb-2">Fitbit-sense-2-frandroid</h2>
-            <p id="d-product-short_descieption" style="max-width:500px">
+            <p id="d-product-short_descieption" class="text-[1rem] font-normal mb-3" style="max-width:500px">
                 Google Fitbit Sense 2 Montre connectée sport et santé avec GPS intégré, fonctionnalités avancées pour la
                 santé, jusqu’à 6 jours d’autonomie de batterie - compatible avec iOS 15 & Android OS 9.0
             </p>
-            <p class="d-product-prices">
-                <span id="old-price">$125.00</span>
-                <span id="new-price">$115.00</span>
-            </p>
-
-            <div class="product-quantity">
-                <input type="number">
+            <div class="d-product-prices flex gap-6 mb-5">
+                <p class="font-semibold line-through">$<span id="old-price">125.00</span></p>
+                <p class="font-semibold"><span id="new-price">$115.00</span></p>
             </div>
+
+            <div class="flex gap-8 mb-5">
+                <div class="d-product-quantity flex gap-3">
+                    <button type="button" class="outline-none text-[1.5rem] hover:text-blue-600">-</button>
+                    <input type="number" name="d-quantite" id="d-quantite-input"
+                        class="bg-slate-100 rounded-md max-w-[100px] text-center">
+                    <button type="button" class="outline-none text-[1.5rem] hover:text-blue-600">+</button>
+                </div>
+                <div id="d-total-pric" class="bg-slate-100 w-[100px] rounded-md flex items-center justify-center">
+                    <p class="px-2">$<span>212</span></p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-5 mb-5">
+                <button type="button" id="d-add-to-cart_btn"
+                    class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
+                    Ajouter Au Panier
+                </button>
+                <button type="button"
+                    class="bg-blue-600 px-2 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
+                    <img class="w-[25px] my-auto" src="../assets/img/heart.png" alt="">
+                </button>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="flex items-center gap-3">
+                    <p class="font-semibold text-md">Brand :</p>
+                    <p id="d-brand" class="font-light text-sm">fitbit</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <p class="font-semibold text-md">Statut :</p>
+                    <p class="font-light text-sm"> <span id="d-stock">100</span> dans le stock</p>
+                </div>
+            </div>
+            <!--line-->
+            <div class="max-w-[608.04px] h-[1px] bg-slate-300 my-5">
+            </div>
+            <!------->
+
+            <div class="flex flex-col gap-2">
+                <p class="flex gap-2 w-[100%]"><img class="w-[15px] h-[15px]" src="../assets/img/check-mark.png"
+                        alt="mark">
+                    <span class="text-[0.7rem]">
+                        Livraison gratuite sur toutes les commandes de
+                        plus de 100$</span>
+                </p>
+                <p class="flex gap-2 w-[100%]"><img class="w-[15px] h-[15px]" src=" ../assets/img/check-mark.png"
+                        alt="mark">
+                    <span class="text-[0.7rem]">
+                        Livraison rapid pendant 3 jours
+                    </span>
+                </p>
+            </div>
+
+            <div class="flex gap-3 items-center justify-center bg-slate-100 mt-5 rounded-md max-w-[400px]">
+                <img class="w-[49px] h-[37px]" src="../assets/img/visa.png" alt="">
+                <img class="w-[59px] h-[47px]" src="../assets/img/card.png" alt="">
+                <img class="w-[69px] h-[47px]" src="../assets/img/paypal.png" alt="">
+            </div>
+
         </section>
-
     </main>
+    <section class="bg-stone-100 py-3 px-5 rounded-md drop-shadow-sm mb-10">
+        <h2 class="text-[1.5rem] font-semibold mb-4">Description</h2>
+        <p class="text-sm font-light">
+            Votre assistant personnel
+            Bienvenue dans la prochaine génération d’assistance avec notre Future Helper Robot. Conçu avec une
+            intelligence artificielle de pointe, ce compagnon robotique sert d'assistant personnel, s'intégrant
+            parfaitement à votre routine quotidienne pour améliorer la productivité et la commodité. Que vous ayez
+            besoin d'aide pour la planification, l'organisation ou simplement une conversation amicale, notre Future
+            Helper Robot est toujours à votre service, apprenant de vos préférences et s'adaptant à vos besoins au fil
+            du temps.
 
+            Gestion domestique sans effort
+            Dites adieu aux tâches banales et bonjour à la liberté retrouvée avec notre Future Helper Robot. Équipé
+            d'une mobilité agile et de manipulateurs adroits, il se déplace sans effort dans votre maison, s'attaquant
+            aux tâches ménagères avec efficacité et précision. Du nettoyage et du rangement à la gestion des appareils
+            domestiques intelligents et même à l'aide à la préparation des repas, ce robot révolutionne la façon dont
+            vous entretenez votre espace de vie, vous laissant plus de temps pour vous concentrer sur ce qui compte
+            vraiment.
+        </p>
+    </section>
 
+    <!--Les produits populaires-->
 
-    <section id="d-product-details">
-        <div id="product-galerie">
+    <section class="py-5">
+        <h2 class="flex items-center gap-3 text-[1.5rem] font-semibold capitlize tracking-wide mb-5">
+            <div class="w-[13px] h-[38px] bg-blue-600 rounded-sm"></div>
+            Les Produits Populaire
+        </h2>
 
+        <div class="flex gap-5 flex-wrap justify-center py-5">
+            <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
+                <img class="w-[100%]" src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="produit">
+                <h4 id="product-name" class="text-[1rem] font-semibold capitalize">Huawei Fit A2 Active</h4>
+                <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">122</span></h5>
+                <button type="button" id="d-add-to-cart_btn"
+                    class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
+                    Ajouter Au Panier
+                </button>
+            </div>
+            <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
+                <img class="w-[100%]" src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="produit">
+                <h4 id="product-name" class="text-[1rem] font-semibold capitalize">Huawei Fit A2 Active</h4>
+                <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">122</span></h5>
+                <button type="button" id="d-add-to-cart_btn"
+                    class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
+                    Ajouter Au Panier
+                </button>
+            </div>
+            <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
+                <img class="w-[100%]" src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="produit">
+                <h4 id="product-name" class="text-[1rem] font-semibold capitalize">Huawei Fit A2 Active</h4>
+                <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">122</span></h5>
+                <button type="button" id="d-add-to-cart_btn"
+                    class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
+                    Ajouter Au Panier
+                </button>
+            </div>
         </div>
     </section>
 
