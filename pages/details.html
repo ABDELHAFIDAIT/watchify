@@ -8,14 +8,14 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../assets/css/output.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Watchify</title>
 </head>
 
 <body class="px-10">
 
-    <Header
-        class="flex flex-wrap items-center justify-between py-3 px-5 my-4 mx-auto rounded-md bg-white drop-shadow-md"
-        style="max-width: 1000px;">
+    <Header class="flex items-center justify-between py-3 px-5 my-4 mx-auto rounded-md bg-white drop-shadow-md w-[100%]"
+        style="max-width: 1000px; position: fixed;top: 0;left: 50%; transform: translate(-50%); z-index:99;">
         <div class="logo w-[70px] h-[50px]">
             <img class="w-[100%] h-[100%]" src="../assets/img/watchify.png" alt="watchify">
         </div>
@@ -27,31 +27,38 @@
             <i class="fa fa-search cursor-pointer"></i>
         </form>
         <nav>
-            <ul class="flex items-center">
-                <li class="mr-5"><a
+            <ul class="flex items-center" id="nav-menu">
+                <li class="link mr-5"><a
                         class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
                         href="accueil.html">Accueil</a></li>
-                <li class="mr-5"><a
+                <li class="link mr-5"><a
                         class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
                         href="catlogue.html">Catalogue</a></li>
-                <li class="mr-7"><a
+                <li class="link mr-7"><a
                         class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
                         href="Apropos.html">Apropos</a></li>
-                <li class="bg-slate-100 p-1 rounded-md drop-shadow-sm"><a href="panier.html"><i
+                <li class="link bg-slate-100 p-1 rounded-md drop-shadow-sm"><a href="panier.html"><i
                             class="fa-solid fa-bag-shopping text-lg hover:text-blue-600 transition-colors"
                             id="shop-bag"></i></a>
                     <span id="Product-counter" class="text-xs text-blue-600">0</span>
                 </li>
             </ul>
         </nav>
+
+        <img id="menu-icon" class="cursor-pointer" src="../assets/img/menu.png" alt="menu" style="width:25px;">
+        <img id="close-menu_icon" class="cursor-pointer" src="../assets/img/fermer.png" alt="closemenu"
+            style="width:25px;">
+
+
     </Header>
 
 
     <!--Product details-->
-    <main class="flex flex-wrap gap-10 justify-center py-10" id="d-product-details">
-        <section class="flex-col max-w-[450px]" id="d-product-galerie">
-            <div class="mb-5" id="d-image-container">
-                <img src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="">
+    <main class="flex gap-10 justify-center py-10" id="d-product-details" style="width: 100% ;margin-top: 100px">
+        <section class="flex-col" id="d-product-galerie" style="width: 100%;">
+            <div class="mb-5 flex justify-center" id="d-image-container">
+                <img src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt=""
+                    style="width: 100%; max-width: 450px;">
             </div>
             <div class="flex gap-2 justify-center" id="d-image-variants">
                 <div class="d-variant bg-blue-600 rounded-md p-2 cursor-pointer max-w-[100px] max-h-[109px] my-auto">
@@ -63,12 +70,13 @@
                 <div class="d-variant bg-blue-600 rounded-md p-2 cursor-pointer max-w-[100px] max-h-[109px] my-auto">
                     <img src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="">
                 </div>
+
             </div>
         </section>
 
-        <section class="max-w-[600px]" id="">
+        <section class="w-[100%]" id="">
             <h2 id="d-product-name">Fitbit-sense-2-frandroid</h2>
-            <p id="d-product-short_descieption">
+            <p id="d-product-short_descieption" style="max-width:500px">
                 Google Fitbit Sense 2 Montre connectée sport et santé avec GPS intégré, fonctionnalités avancées pour la
                 santé, jusqu’à 6 jours d’autonomie de batterie - compatible avec iOS 15 & Android OS 9.0
             </p>
@@ -85,6 +93,7 @@
     </main>
 
 
+
     <section id="d-product-details">
         <div id="product-galerie">
 
@@ -96,7 +105,7 @@
 
 
 
-
+    <script src="../assets/js/main.js"></script>
     <script src="../tailwind.config.js"></script>
 </body>
 
