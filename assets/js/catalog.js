@@ -6,6 +6,7 @@ function deselectOtherCheckboxes(selectedCheckbox) {
       }
     });
   }
+let btnNext=document.querySelector('btn_next');
+let btnPrev=document.querySelector('btn_previous');
 
 
-  
