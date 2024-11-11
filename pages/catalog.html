@@ -5,51 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="w-full">
  <!-- Header -->
-<header class="w-full bg-white flex justify-center h-[30vh]">
-  <div class="container flex items-center justify-between shadow-lg w-[80%] mt-24 rounded-sm" >
-    <div class="">
-      <a href="#"><img class="w-auto h-[100px]  object-fill" src="../assets/img/logo.png" alt=""></a>
-    </div>
-    <div class="flex items-center w-full max-w-md mx-4 shadow-lg rounded-md">
-      <input 
-        type="text" 
-        placeholder="Rechercher" 
-        class="w-full px-4 py-2 text-gray-800 border-none rounded-l-md focus:outline-none"
-      />
-      <button 
-        class="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600"
-      >
-        🔍
-      </button>
-    </div>
-    <nav class="hidden md:flex items-center space-x-4">
-      <a href="#" class="text-gray-600 hover:text-blue-500">Accueil</a>
-      <a href="#" class="text-gray-600 hover:text-blue-500">Catalogue</a>
-      <a href="#" class="text-gray-600 hover:text-blue-500">À propos</a>
-      <a href="#" class="text-gray-600 hover:text-blue-500">🛒</a>
-    </nav>
-    <button class="md:hidden p-2 rounded-md focus:outline-none">
-      ☰
-    </button>
-  </div>
-</header>
+ <Header class="flex items-center justify-between py-3 px-5 my-4 mx-auto rounded-md bg-white drop-shadow-md w-[100%]"
+ style="max-width: 1000px; position: fixed;top: 0;left: 50%; transform: translate(-50%); z-index:99;">
+ <div class="logo w-[70px] h-[50px]">
+     <img class="w-[100%] h-[100%]" src="../assets/img/watchify.png" alt="watchify">
+ </div>
+ <form action="/"
+     class="bg-slate-100 rounded-md py-1 pr-3 flex items-center justify-between w-[30%] drop-shadow-sm">
+     <input type="search"
+         class="bg-transparent w-[90%] h-[25px] rounded-md pl-3 py-0.5 outline-none text-xs placeholder:text-xs"
+         placeholder="Recherche..">
+     <i class="fa fa-search cursor-pointer"></i>
+ </form>
+ <nav>
+     <ul class="flex items-center" id="nav-menu">
+         <li class="link mr-5"><a
+                 class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
+                 href="accueil.html">Accueil</a></li>
+         <li class="link mr-5"><a
+                 class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
+                 href="catlogue.html">Catalogue</a></li>
+         <li class="link mr-7"><a
+                 class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
+                 href="Apropos.html">Apropos</a></li>
+     </ul>
+ </nav>
+ <div class="link bg-slate-100 p-1 rounded-md drop-shadow-sm"><a href="panier.html"><i
+             class="fa-solid fa-bag-shopping text-lg hover:text-blue-600 transition-colors"
+             id="shop-bag"></i></a>
+     <span id="Product-counter" class="text-xs text-blue-600">0</span>
+ </div>
 
-<!-- titre section -->
-<section >
+ <img id="menu-icon" class="cursor-pointer" src="../assets/img/menu.png" alt="menu" style="width:25px;">
+ <img id="close-menu_icon" class="cursor-pointer" src="../assets/img/fermer.png" alt="closemenu"
+     style="width:25px;">
+
+
+</Header>
+
+<section class="mt-[10%]">
   <div class="w-full flex flex-col align-middle text-center my-8">
-    <h1 class="text-4xl font-extrabold text-gray-800">"Watchify: The Smart Choice"</h1>
-    <h3>Stay Ahead with the Best Smartwatches</h3>
+    <h1 class="text-5xl font-extrabold text-gray-800">"Watchify: The Smart Choice"</h1>
+    <h3 class="mt-5">Stay Ahead with the Best Smartwatches</h3>
   </div>
 </section>
-<!-- fin de section titre -->
 
-<!-- section caroussel -->
-  <section>
-  </section>
+<section class="grid mt-8 px-4 gap-10">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mx-10">
+    <!-- Left Column: Text Content -->
+    <div class="flex flex-col items-center text-center justify-center">
+      <h1 class="text-5xl font-semibold text-blue-700 mb-2">Exquisite Watches</h1>
+      <h1 class="text-4xl font-semibold text-blue-500 mb-2">
+        Choose Luxury, <span class="text-black">Choose Us</span>
+      </h1>
+      <p class="text-xl md:text-2xl mb-4">
+        Discover the Perfect Watch for Every Occasion and Elevate Your Style with Timeless Elegance and Precision Craftsmanship.
+      </p>
+      <div class="flex items-center justify-center gap-4">
+        <p class="text-4xl md:text-6xl font-bold text-blue-500 mb-4">$199.99</p>
+        <button class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-700 transition">
+          Ajouter au panier
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Column: Image and Controls -->
+    <div class="flex items-center justify-between w-full">
+      <button class="">
+        <img src="../assets/img/Left.png" alt="Previous">
+      </button>
+
+      <div class="flex flex-col items-center justify-center gap-5">
+        <img src="../assets/img/pngwing.com (1).png" alt="Smartwatch Image 1" class="w-full h-full object-contain">
+        <div class="h-[5px] w-1/2 bg-black rounded-[100%] blur-md self-center"></div>
+      </div>
+
+      <button class="">
+        <img src="../assets/img/next.png" alt="Next">
+      </button>
+    </div>
+  </div>
+</section>
+
+
 <!-- fin du section caroussel -->
 
 <!-- trier -->
