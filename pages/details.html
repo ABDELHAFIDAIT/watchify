@@ -9,11 +9,26 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../assets/css/output.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <title>Watchify</title>
 </head>
 
 <body>
-    <main class="px-20">
+    <style>
+        #d-quantite-input::-webkit-outer-spin-button,
+        #d-quantite-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+
+
+
+    <main class="px-20" id="d-main-container">
 
         <Header
             class="flex items-center justify-between py-3 px-5 my-4 mx-auto rounded-md bg-white drop-shadow-md w-[100%]"
@@ -54,13 +69,7 @@
 
         </Header>
 
-        <style>
-            #d-quantite-input::-webkit-outer-spin-button,
-            #d-quantite-input::-webkit-inner-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-            }
-        </style>
+
         <!--Product details-->
         <main class="flex gap-10 justify-center py-10" id="d-product-details" style="width: 100% ;margin-top: 100px">
             <section class="flex-col" id="d-product-galerie" style="width: 100%;">
@@ -224,8 +233,70 @@
     </main>
 
 
+    <!--NewsLetter-->
+    <section class="bg-blue-950 py-10 px-10">
+        <div class="text-white flex md:justify-between justify-center items-center flex-wrap gap-5">
+            <div>
+                <h1 class="text-3xl font-semibold mb-3">Notre Newsletter</h1>
+                <p class="font-light text-sm">Recevoir notre vouveaux produit et mise à jour</p>
+            </div>
+            <form class="flex border-none p-2 bg-white rounded-md max-w-[500px]">
+                <input class="md:grow border-none outline-none px-5 text-black" type="email" name=""
+                    placeholder="Email Example ..">
+                <button class="bg-blue-950 py-2 px-5 rounded-md hover:bg-blue-600" type="button">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    <!------------------------>
 
 
+
+    <!----Footer----->
+    <footer class="flex flex-col bg-black items-center py-8 md:px-20 px-10 ">
+        <div class="flex justify-between flex-wrap gap-x-2 gap-y-5 text-white w-full">
+            <img class="w-[100px] h-[70px]" src="../assets/img/watchify-white-logo.png" alt="">
+            <div>
+                <h4 class="font-semibold mb-2">Support</h4>
+                <ul>
+                    <li class="font-thin mb-1.5">111 Bijoy sarani, Dhaka,<br>DH 1515, Bangladesh.</li>
+                    <li class="font-thin mb-1.5">exclusive@gmail.com</li>
+                    <li class="font-thin mb-1.5">+88015-88888-9999</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Account</h4>
+                <ul>
+                    <li class="font-thin mb-1.5"><a href="#">My Account</a></li>
+                    <li class="font-thin mb-1.5"><a href="#">Login / Register</a></li>
+                    <li class="font-thin mb-1.5"><a href="#">Cart</a></li>
+                    <li class="font-thin mb-1.5"><a href="#">Wishlist</a></li>
+                    <li class="font-thin mb-1.5"><a href="#">Shop</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-2">Quick Links</h4>
+                <ul>
+                    <li class="font-thin mb-1.5"><a href="#">Privacy Policy</a></li>
+                    <li class="font-thin mb-1.5"><a href="#">Terms Of Use</a></li>
+                    <li class="font-thin mb-1.5"><a href="#">FAQ</a></li>
+                    <li class="font-thin mb-1.5"><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Download App</h4>
+                <span class="font-thin">Save $3 with App New User Only</span>
+                <img class="mt-3 max-w-[150px]" src="../assets/img/qr-app.png" alt="">
+                <div class="flex gap-2 mt-5">
+                    <img class="w-[25px]" src="../assets/img/facebook.png" alt="">
+                    <img class="w-[25px]" src="../assets/img/twitter.png" alt="">
+                    <img class="w-[25px]" src="../assets/img/instagram.png" alt="">
+                    <img class="w-[25px]" src="../assets/img/linkedin.png" alt="">
+                </div>
+            </div>
+        </div>
+        <span class="font-thin text-sm text-stone-500 mt-10">Copyright Rimel 2022. All right reserved</span>
+    </footer>
 
     <script src="../assets/js/main.js"></script>
     <script src="../tailwind.config.js"></script>
