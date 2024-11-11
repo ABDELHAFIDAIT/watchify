@@ -122,9 +122,10 @@
     </div>
 
   </section>
-  <section class="flex mt-8 space-x-8">
-    <div class="p-4 border rounded-md shadow-lg w-1/5 ml-[10%] hidden md:block">
-      <div class="space-y-4 ">
+
+
+  <section class="flex ">
+    <div class="p-4 border rounded-md shadow-lg w-1/5 ml-[10%] hidden md:block space-y-4 ">
 
         <div class="flex items-center space-x-3">
           <input type="checkbox" id="samsung" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
@@ -232,13 +233,11 @@
             <span class="text-gray-700">Oraimo</span>
           </label>
         </div>
-      </div>
     </div>
 
     <!-- Section des Smartwatches -->
-    <div class="w-[75%] p-4 md:w-[100%]">
+    <section class="p-4 md:w-[100%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <!-- Grid de 12 smartwatches -->
-      <div class="grid grid-cols-4 gap-6">
         <!-- Card 1 -->
         <div class="border rounded-lg shadow-md p-4 ">
           <img src="../assets/img/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
@@ -296,8 +295,7 @@
           <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au
             panier</button>
         </div>
-      </div>
-    </div>
+    </section>
   </section>
 
   <!-- Pagination -->
@@ -344,7 +342,18 @@
   </section>
 
   <!-- fin du pagination  -->
-
+  <section class="bg-blue-950 py-10">
+    <div class="mx-20 text-white flex justify-between items-center flex-wrap gap-5">
+        <div>
+            <h1 class="text-3xl font-semibold mb-3">Notre Newsletter</h1>
+            <p class="font-light text-sm">Recevoir  notre vouveaux produit et mise à jour</p>
+        </div>
+        <form class="flex border-none p-2 bg-white rounded-md">
+            <input class="grow border-none outline-none px-5 text-black" type="email" name="" placeholder="Email Example ..">
+            <button class="bg-blue-950 py-2 px-6 rounded-md" type="button">Subscribe</button>
+        </form>
+    </div>
+</section>
 
   <!-- footer -->
 
