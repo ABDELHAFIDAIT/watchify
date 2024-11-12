@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="a propos page de site Watchify">
+
+    <meta name="keywords" content="Watchify, smart Watch, technologie">
+
     <meta name="keywords" content="Watchify , smart Watch , technologie">
+
     <meta name="author" content="IMILY ABDERRAZZAK">
     <title>A PROPOS</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -25,17 +31,14 @@
 <body class="font-poppins">
     <!-- Main Container -->
     <div class="min-h-screen bg-white">
+        
         <!-- Navigation Bar -->
         <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center h-20">
                     <!-- Logo -->
                     <div class="flex items-center space-x-2">
-                        <img src="/assets/img/logo.png" class="h-10 w-10 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="7"></circle>
-                            <polyline points="12 9 12 12 13.5 13.5"></polyline>
-                            <path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path>
-                    </img>
+                        <img src="/assets/img/logo.png" class="h-10 w-10" alt="Logo">
                         <span class="text-xl font-bold">Watchify</span>
                     </div>
 
@@ -49,14 +52,22 @@
                     <!-- Search Bar -->
                     <div class="hidden md:block relative w-64">
                         <input type="text" placeholder="Rechercher..." class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                        <img src="/assets/img/search_logo.png" class="h-5 w-5 absolute right-3 top-2.5 text-gray-400" alt="Search">
+
                         <img src="/assets/img/search_logo.png" class="h-5 w-5 absolute right-3 top-2.5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     </img>
+
                     </div>
 
                     <!-- Cart Button -->
                     <div class="relative">
                         <button class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors">
+
+                            <img src="/assets/img/car_ panier.png" class="h-6 w-6 text-gray-700" alt="Cart">
+
                             <img src="/assets/img/car_ panier.png" class="h-6 w-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"></img>
+
                             <span class="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
                         </button>
                     </div>
@@ -65,16 +76,17 @@
         </nav>
 
         <!-- Hero Section -->
+
+
          <!--HISTORY-->
+
         <section class="pt-24 bg-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <!-- Image Section -->
                     <div class="relative">
                         <img src="/assets/img/watch_main.png" alt="Smart Watch">
                     </div>
 
-                    <!-- Content Section -->
                     <div class="space-y-8">
                         <div class="space-y-6">
                             <div class="flex items-center">
@@ -83,21 +95,27 @@
                             </div>
                             <p class="text-xl text-gray-800 leading-relaxed font-lato">
                                 Chez Watchify, notre aventure a commencé avec une passion pour la technologie et le design. 
-                                Fondée en 2024, notre mission a toujours été de créer des montres intelligentes qui allient 
-                                innovation, élégance et fonctionnalité. Chaque modèle que nous concevons est un témoignage 
-                                de notre engagement à offrir le meilleur à nos clients.
+                                Fondée en 2024, notre mission a toujours été de créer des montres intelligentes qui allient innovation, élégance et fonctionnalité. Chaque modèle que nous concevons est un témoignage de notre engagement à offrir le meilleur à nos clients.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+
+        <!-- Mission Section -->
+        <section>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
         <!--Mission-->
         <section>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         
                     <!-- Content Section -->
+
                     <div class="space-y-8">
                         <div class="space-y-6">
                             <div class="flex items-center">
@@ -105,19 +123,351 @@
                                 <h1 class="text-4xl font-bold text-blue-500 font-lato">NOTRE MISSION</h1>
                             </div>
                             <p class="text-xl text-gray-800 leading-relaxed font-lato">
-                                Chez Watchify, nous croyons que la technologie doit enrichir notre quotidien.
-                                 Notre objectif est de transformer chaque montre en un compagnon de vie,
+                                Chez Watchify, nous croyons que la technologie doit enrichir notre quotidien. 
+                                Notre objectif est de transformer chaque montre en un compagnon de vie, 
                                 capable de s'adapter à votre style et à vos besoins.
                             </p>
                         </div>
                     </div>
-                     <!-- Image Section -->
-                     <div class="relative">
+
+                    <div class="relative">
                         <img src="/assets/img/watch_main2.png" alt="Smart_Watch2">
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- avis de clients section -->
+        <section>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="flex items-center mb-8">
+                    <div class="w-5 h-16 bg-blue-500 rounded mr-4"></div>
+                    <h1 class="text-4xl font-bold text-blue-500 font-lato">Les Feed-Back de Nos Clients</h1>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <img src="/assets/img/maria.png" alt="Maria">
+                    <div>
+                        <span class="font-bold">Maria L.</span>
+                        <hr class="my-2 mb-20">
+                        <span>"J'adore ma montre Watchify! Elle m'accompagne partout et me permet de rester connecté tout en ayant un look élégant."</span>
+                    </div>
+                </div>
+
+                <div class="mt-32 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="md:hidden">
+                        <span class="font-bold">Thomas M.</span>
+                        <hr class="my-2 mb-20">
+                        <span>"J'adore ma montre Watchify! Elle m'accompagne partout et me permet de rester connecté tout en ayant un look élégant."</span>
+                    </div>
+                    <img src="/assets/img/thomas.png" alt="Thomas">
+                    <div class="lg::hidden">
+                        <span class="font-bold">Thomas M.</span>
+                        <hr class="my-2 mb-20">
+                        <span>"J'adore ma montre Watchify! Elle m'accompagne partout et me permet de rester connecté tout en ayant un look élégant."</span>
+                    </div>
+                </div>
+
+                <div class="mt-32 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <img src="/assets/img/peter.png" alt="Peter">
+                    <div>
+                        <span class="font-bold">Peter J.</span>
+                        <hr class="my-2 mb-20">
+                        <span>Le service client de Watchify est incroyable. Ils ont répondu à toutes mes questions et m'ont aidé à choisir la montre parfaite.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notre EQUIPE -->
+        <section class="mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="flex items-center mb-8">
+                    <div class="w-5 h-16 bg-blue-500 rounded mr-4"></div>
+                    <h1 class="text-4xl font-bold text-blue-500 font-lato">Notre Equipe</h1>
+                </div>
+                <p>Nous sommes une équipe diversifiée de designers, ingénieurs et spécialistes du marketing, tous dédiés à une seule mission : rendre chaque montre Watchify exceptionnelle.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 ">
+                    <div class="border-solid bg-blue-950 p-4 rounded-lg ">
+                        <img src="/assets/img/abderrazzak_imily.png" alt="Team Member" class="rounded-full mb-5 w-16 md:w-32 lg:w-48 ml-20">
+                        <span class="font-bold text-white lg:ml-20">ABDERRAZZAK IMILY</span>
+                        <span class="block text-white">Engineering Manager</span>
+                        <span class="text-white">Lead engineering teams at Figma, Pitch, and Protocol Labs.</span>
+                        <div class="flex justify-evenly mt-2">
+                            <img src="/assets/img/linkdin.png" alt="LinkedIn" class="w-6 h-6">
+                            <img src="/assets/img/Social.png" alt="Social" class="w-6 h-6">
+                            <img src="/assets/img/x.png" alt="X" class="w-6 h-6">
+                        </div>
+                    </div>
+                    <div class="border-solid bg-blue-950 p-4 rounded-lg">
+                        <img src="/assets/img/abderrazzak_imily.png" alt="Team Member" class="rounded-full mb-5 w-16 md:w-32 lg:w-48 ml-20">
+                        <span class="font-bold text-white lg:ml-20">ABDERRAZZAK IMILY</span>
+                        <span class="block text-white">Engineering Manager</span>
+                        <span class="text-white">Lead engineering teams at Figma, Pitch, and Protocol Labs.</span>
+                        <div class="flex justify-evenly mt-2">
+                            <img src="/assets/img/linkdin.png" alt="LinkedIn" class="w-6 h-6">
+                            <img src="/assets/img/Social.png" alt="Social" class="w-6 h-6">
+                            <img src="/assets/img/x.png" alt="X" class="w-6 h-6">
+                        </div>
+                    </div>
+                    <div class="border-solid bg-blue-950 p-4 rounded-lg">
+                        <img src="/assets/img/abderrazzak_imily.png" alt="Team Member" class="rounded-full mb-5 w-16 md:w-32 lg:w-48 ml-20">
+                        <span class="font-bold text-white lg:ml-20">ABDERRAZZAK IMILY</span>
+                        <span class="block text-white">Engineering Manager</span>
+                        <span class="text-white">Lead engineering teams at Figma, Pitch, and Protocol Labs.</span>
+                        <div class="flex justify-evenly mt-2">
+                            <img src="/assets/img/linkdin.png" alt="LinkedIn" class="w-6 h-6">
+                            <img src="/assets/img/Social.png" alt="Social" class="w-6 h-6">
+                            <img src="/assets/img/x.png" alt="X" class="w-6 h-6">
+                        </div>
+                    </div>
+                    <div class="border-solid bg-blue-950 p-4 rounded-lg">
+                        <img src="/assets/img/abderrazzak_imily.png" alt="Team Member" class="rounded-full mb-5 w-16 md:w-32 lg:w-48 ml-20">
+                        <span class="font-bold text-white lg:ml-20">ABDERRAZZAK IMILY</span>
+                        <span class="block text-white">Engineering Manager</span>
+                        <span class="text-white">Lead engineering teams at Figma, Pitch, and Protocol Labs.</span>
+                        <div class="flex justify-evenly mt-2">
+                            <img src="/assets/img/linkdin.png" alt="LinkedIn" class="w-6 h-6">
+                            <img src="/assets/img/Social.png" alt="Social" class="w-6 h-6">
+                            <img src="/assets/img/x.png" alt="X" class="w-6 h-6">
+                        </div>
+                    </div>
+                    <div class="border-solid bg-blue-950 p-4 rounded-lg">
+                        <img src="/assets/img/abderrazzak_imily.png" alt="Team Member" class="rounded-full mb-5 w-16 md:w-32 lg:w-48 ml-20">
+                        <span class="font-bold text-white lg:ml-20">ABDERRAZZAK IMILY</span>
+                        <span class="block text-white">Engineering Manager</span>
+                        <span class="text-white">Lead engineering teams at Figma, Pitch, and Protocol Labs.</span>
+                        <div class="flex justify-evenly mt-2">
+                            <img src="/assets/img/linkdin.png" alt="LinkedIn" class="w-6 h-6">
+                            <img src="/assets/img/Social.png" alt="Social" class="w-6 h-6">
+                            <img src="/assets/img/x.png" alt="X" class="w-6 h-6">
+                        </div>
+                    </div>
+                    <div class="border-solid bg-blue-950 p-4 rounded-lg">
+                        <img src="/assets/img/abderrazzak_imily.png" alt="Team Member" class="rounded-full mb-5 w-16 md:w-32 lg:w-48 ml-20">
+                        <span class="font-bold text-white lg:ml-20">ABDERRAZZAK IMILY</span>
+                        <span class="block text-white">Engineering Manager</span>
+                        <span class="text-white">Lead engineering teams at Figma, Pitch, and Protocol Labs.</span>
+                        <div class="flex justify-evenly mt-2">
+                            <img src="/assets/img/linkdin.png" alt="LinkedIn" class="w-6 h-6">
+                            <img src="/assets/img/Social.png" alt="Social" class="w-6 h-6">
+                            <img src="/assets/img/x.png" alt="X" class="w-6 h-6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- notre Valeur section -->
+        <section>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="flex items-center mb-8">
+                    <div class="w-5 h-16 bg-blue-500 rounded mr-4"></div>
+                    <h1 class="text-4xl font-bold text-blue-500 font-lato">Our Values</h1>
+                </div>
+                <span>How we work at WATCHIFY</span>
+                <span>Our shared values keep us connected and guide us as one team.</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8">
+                    <div class="text-center">
+                        <img src="/assets/img/collab icon.png" alt="Collaboration" class="mx-auto">
+                        <span class="block font-bold">Care about our team</span>
+                        <span>Understand what matters to our employees. Give them what they need to do their best work.</span>
+                    </div>
+                    <div class="text-center">
+                        <img src="/assets/img/heart icon.png" alt="Heart" class="mx-auto">
+                        <span class="block font-bold">Be excellent to each other</span>
+                        <span>No games. No bullshit. We rely on our peers to improve. Be open, honest and kind.</span>
+                    </div>
+                    <div class="text-center">
+                        <img src="/assets/img/arrow up.png" alt="Arrow Up" class="mx-auto">
+                        <span class="block font-bold">Pride in what we do</span>
+                        <span>Value quality and integrity in everything we do. At all times. No exceptions.</span>
+                    </div>
+                    <div class="text-center">
+                        <img src="/assets/img/happy_face_imoji.png" alt="Happy Face" class="mx-auto">
+                        <span class="block font-bold">Don't #!&$ the customer</span>
+                        <span>Understand customers' stated and unstated needs. Make them wildly successful.</span>
+                    </div>
+                    <div class="text-center">
+                        <img src="/assets/img/falg icon.png" alt="Flag" class="mx-auto">
+                        <span class="block font-bold">Do the impossible</span>
+                        <span>Be energized by difficult problems. Revel in unknowns. Ask "Why?", but always question, "Why not?"</span>
+                    </div>
+                    <div class="text-center">
+                        <img src="/assets/img/thander icon.png" alt="Thunder" class="mx-auto">
+                        <span class="block font-bold">Sweat the small stuff</span>
+                        <span>We believe the best products come from the best attention to detail. Sweat the small stuff.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- how we do it section -->
+        <section>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="flex items-center mb-8">
+                    <div class="w-5 h-16 bg-blue-500 rounded mr-4"></div>
+                    <h1 class="text-4xl font-bold text-blue-500 font-lato">Pourquoi ça Marche ?</h1>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 mt-8">
+                    <div class="text-center">
+                        <img src="/assets/img/Frame (1).png" alt="Quality" class="mx-auto">
+                        <span class="block font-bold">Qualité</span>
+                        <span>La meilleure qualité au meilleur prix</span>
+                    </div>
+                    <div class="text-center">
+                        <img src="/assets/img/Frame.png" alt="International Brands" class="mx-auto">
+                        <span class="block font-bold">Marques Internationales</span>
+                        <span>Partenariat avec les plus grandes entreprises internationales, Apple, Samsung...</span>
+                    </div>
+                    <div class="text-center">
+                        <img src="/assets/img/Group.png" alt="Moodle" class="mx-auto">
+                        <span class="block font-bold">Moodle</span>
+                        <span>Le dernier moodle sur le marché</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact-->
+        <section>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="flex items-center mb-8">
+                    <div class="w-5 h-16 bg-blue-500 rounded mr-4"></div>
+                    <h1 class="text-4xl font-bold text-blue-500 font-lato">Contact</h1>
+                </div>
+                <div class="min-h-screen py-6 flex flex-col justify-center sm:py-12">
+                    <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+                        <div class="absolute inset-0 bg-gradient-to-r from-indigo-700 to-purple-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+                        <div class="text-white relative px-4 py-10 bg-indigo-400 shadow-lg sm:rounded-3xl sm:p-20">
+                            <div class="text-center pb-6">
+                                <h1 class="text-3xl">Contact Us!</h1>
+                                <p class="text-gray-300">Fill up the form below to send us a message.</p>
+                            </div>
+                            <form>
+                                <input class="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Name" name="name">
+                                <input class="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" placeholder="Email" name="email">
+                                <input class="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Subject" name="_subject">
+                                <textarea class="shadow mb-4 min-h-0 appearance-none border rounded h-64 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Type your message here..." name="message" style="height: 121px;"></textarea>
+                                <div class="flex justify-between">
+                                    <input class="shadow bg-indigo-600 hover:bg-indigo-700 text-white font -bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Send ➤">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+   
+         <!-- FAQ Section -->
+         <section class="py-20 bg-white" x-data="{ openFaq: null }">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center mb-12">
+                    <div class="w-2 h-16 bg-blue-500 rounded mr-4"></div>
+                    <h2 class="text-4xl font-bold text-blue-500">FAQ</h2>
+                </div>
+    
+                <div class="space-y-4">
+                    <div class="border border-gray-200 rounded-lg">
+                        <button class="w-full px-6 py-4 flex justify-between items-center focus:outline-none"
+                                @click="openFaq = openFaq === 1 ? null : 1">
+                            <span class="text-lg font-semibold text-gray-900">Quelles sont les fonctionnalités de base de vos montres intelligentes?</span>
+                            <svg class="w-5 h-5 text-blue-500 transform transition-transform duration-200"
+                                 :class="{'rotate-180': openFaq === 1}"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="px-6 overflow-hidden transition-all duration-300"
+                             :class="{'max-h-48 py-4': openFaq === 1, 'max-h-0': openFaq !== 1}"
+                             x-cloak>
+                            <p class="text-gray-600">Nos montres intelligentes offrent le suivi de la condition physique, les notifications smartphone, le moniteur cardiaque, le GPS intégré, et sont résistantes à l'eau.</p>
+                        </div>
+                    </div>
+    
+                    <div class="border border-gray-200 rounded-lg">
+                        <button class="w-full px-6 py-4 flex justify-between items-center focus:outline-none"
+                                @click="openFaq = openFaq === 2 ? null : 2">
+                            <span class="text-lg font-semibold text-gray-900">Quelle est la durée de vie de la batterie?</span>
+                            <svg class="w-5 h-5 text-blue-500 transform transition-transform duration-200"
+                                 :class="{'rotate-180': openFaq === 2}"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="px-6 overflow-hidden transition-all duration-300"
+                             :class="{'max-h-48 py-4': openFaq === 2, 'max-h-0': openFaq !== 2}"
+                             x-cloak>
+                            <p class="text-gray-600">La durée de vie de la batterie varie selon le modèle, mais en moyenne nos montres durent 3-5 jours avec une utilisation normale.</p>
+                        </div>
+
+                     <!-- Image Section -->
+                     <div class="relative">
+                        <img src="/assets/img/watch_main2.png" alt="Smart_Watch2">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="bg-blue-950 py-10 px-4 sm:px-10">
+            <div class="text-white flex md:justify-between justify-center items-center flex-wrap gap-5">
+                <div>
+                    <h1 class="text-3xl font-semibold mb-3">Notre Newsletter</h1>
+                    <p class="font-light text-sm">Recevoir notre nouveaux produits et mise à jour</p>
+                </div>
+                <form class="flex border-none p-2 bg-white rounded-md max-w-[500px]">
+                    <input class="md:grow border-none outline-none px-5 text-black" type="email" placeholder="Email Example ..">
+                    <button class="bg-blue-950 py-2 px-5 rounded-md hover:bg-blue-600" type="button">Subscribe</button>
+                </form>
+            </div>
+        </section>
+        <!-- footer-->
+        <footer class="flex flex-col bg-black items-center py-8 md:px-20 px-10">
+            <div class="flex justify-between flex-wrap gap-x-2 gap-y-5 text-white w-full">
+                <img class="w-[100px] h-[70px]" src="/assets/img/logo.png" alt="Logo">
+                <div>
+                    <h4 class="font-semibold mb-2">Support</h4>
+                    <ul>
+                        <li class="font-thin mb-1.5">111 Bijoy sarani, Dhaka,<br>DH 1515, Bangladesh.</li>
+                        <li class="font-thin mb-1.5">exclusive@gmail.com</li>
+                        <li class="font-thin mb-1.5">+88015-88888-9999</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-2">Account</h4>
+                    <ul>
+                        <li class="font-thin mb-1.5"><a href="#">My Account</a></li>
+                        <li class="font-thin mb-1.5"><a href="#">Login / Register</a></li>
+                        <li class="font-thin mb-1.5"><a href="#">Cart</a></li>
+                        <li class="font-thin mb-1.5"><a href="#">Wishlist</a></li>
+                        <li class="font-thin mb-1.5"><a href="#">Shop</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-2">Quick Links</h4>
+                    <ul>
+                        <li class="font-thin mb-1.5"><a href="#">Privacy Policy</a></li>
+                        <li class="font-thin mb-1.5"><a href="#">Terms Of Use</a></li>
+                        <li class="font-thin mb-1.5"><a href="#">FAQ</a></li>
+                        <li class="font-thin mb-1.5"><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-2">Download App</h4>
+                    <span class="font-thin">Save $3 with App New User Only</span>
+                    <img class="mt-3 max-w-[150px]" src="/assets/img/Qrcode 1.png" alt="QR Code">
+                    <div class="flex gap-2 mt-5">
+                        <img class="w-[25px]" src="/assets/img/Icon-Facebook.png" alt="Facebook">
+                        <img class="w-[25px]" src="/assets/img/Icon-Twitter.png" alt="Twitter">
+                        <img class="w-[25px]" src="/assets/img/icon-instagram.png" alt="Instagram">
+                        <img class="w-[25px]" src="/assets/img/Icon-Linkedin.png" alt="LinkedIn">
+                    </div>
+                </div>
+            </div>
+            <span class="font-thin text-sm text-stone-500 mt-10">Copyright Rimel 2022. All rights reserved</span>
+        </footer>
+
     <!--avis de clients-->
   <section>
     <div class="pl-40 flex items-center">
@@ -188,6 +538,7 @@
       </div>
 
 </section>
+
 
     </div>
 </body>
