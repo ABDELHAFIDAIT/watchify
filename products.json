@@ -1,5 +1,4 @@
-{
-  "products" : [
+[
     {
       "id": 1,
       "name": "Apple Watch Series 8",
@@ -301,4 +300,3 @@
       ]
     }
   ]
-}

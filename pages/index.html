@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <link rel="stylesheet" href="../assets/css/style.css">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -15,255 +13,20 @@
 
 <body>
 
-    
-    <Header
-    class="flex items-center justify-between py-3 px-5 my-4 mx-auto rounded-md bg-white drop-shadow-md w-[100%]"
-    style="max-width: 1000px; position: fixed;top: 0;left: 50%; transform: translate(-50%); z-index:99;">
-    <div class="logo w-[70px] h-[50px]">
-        <img class="w-[100%] h-[100%]" src="../assets/img/watchify.png" alt="watchify">
-    </div>
-    <form action="/"
-        class="bg-slate-100 rounded-md py-1 pr-3 flex items-center justify-between w-[30%] drop-shadow-sm">
-        <input type="search"
-            class="bg-transparent w-[90%] h-[25px] rounded-md pl-3 py-0.5 outline-none text-xs placeholder:text-xs"
-            placeholder="Recherche..">
-        <i class="fa fa-search cursor-pointer"></i>
-    </form>
-    
-    <nav>
-
-        <ul class="flex items-center" id="nav-menu">
-            <li class="link mr-5"><a
-                    class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
-                    href="accueil.html">Accueil</a></li>
-            <li class="link mr-5"><a
-                    class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
-                    href="catlogue.html">Catalogue</a></li>
-            <li class="link mr-7"><a
-                    class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
-                    href="Apropos.html">Apropos</a></li>
-        </ul>
-    </nav>
-    <div class="link bg-slate-100 p-1 rounded-md drop-shadow-sm"><a href="panier.html"><i
-                class="fa-solid fa-bag-shopping text-lg hover:text-blue-600 transition-colors"
-                id="shop-bag"></i></a>
-        <span id="Product-counter" class="text-xs text-blue-600">0</span>
-    </div>
-
-    <img id="menu-icon" class="cursor-pointer" src="../assets/img/menu.png" alt="menu" style="width:25px;">
-    <img id="close-menu_icon" class="cursor-pointer" src="../assets/img/fermer.png" alt="closemenu"
-        style="width:25px;">
-
-
-</Header>
-
-
     <section class="bg-gray-100 mt-10 h-[750px] justify-center">
         <div class="flex flex-col md:flex-row items-center mt-15 ">
             <div class="text-center md:text-left md:ml-44 md:mt-24">
                 <p class="text-lg mb-20">OBTENEZ VOTRE</p>
                 <h1 class="text-6xl font-bold tracking-wider my-4">WATCHIFY</h1>
-
-                <button class="bg-blue-500 text-white rounded-lg mt-8 w-36 py-2 transition hover:bg-blue-700">ACHETER</button>
-            </div>
-            <div class="mt-8 md:mt-0 md:ml-40">
-                <img src="../assets/img/header.png" alt="Watchify" class="w-[600px] mx-auto md:mx-0 mt-10">
-
                 <button
                     class="bg-blue-500 text-white rounded-lg mt-8 w-36 py-2 transition hover:bg-blue-700">ACHETER</button>
             </div>
             <div class="mt-8 md:mt-0 md:ml-40">
                 <img src="Frame 1000006078.png" alt="Watchify" class="w-[600px] mx-auto md:mx-0">
-
             </div>
         </div>
     </section>
 
-
-
-
-    
-    <section class="py-16">
-        <div class="flex items-center">
-            <div class="bg-blue-500 w-4 h-12 rounded-md ml-10 md:ml-36 mb-10"></div>
-            <div class="ml-5">
-                <h2 class="text-3xl text-blue-500">Categories</h2>
-                <p class="text-xl mt-2">Parcourir par catégorie</p>
-            </div>
-        </div>
-     
-        <div class="mt-12 ml- md:ml-52 ">
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 ">
-                <img src="../assets/img/categorie1.png" alt="iphone" class="w-52 h-auto object-cover ">
-                <img src="../assets/img/categorie2.png" alt="" class="w-52 h-auto object-cover ">
-                <img src="../assets/img/categori3.png" alt="" class="w-52 h-auto object-cover -mt-10 ">
-                <img src="../assets/img/categorie4.png" alt="" class="w-52 h-auto object-cover -mt-5 ">
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 ">
-                <img src="../assets/img/categorie4.png" alt="" class="w-52 h-auto object-cover -mt-5">
-                <img src="../assets/img/categorie6.png" alt="" class="w-52 h-auto object-cover ">
-                <img src="../assets/img/categorie7.png" alt="" class="w-52 h-auto object-cover -mt-3">
-                <img src="../assets/img/categorie8.png" alt="" class="w-52 h-auto object-cover">
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 ">
-                <img src="../assets/img/categorie9.png" alt="" class="w-52 h-auto object-cover mt-6">
-                <img src="../assets/img/categorie10.png" alt="" class="w-52 h-auto object-cover -mt-3 ">
-                <img src="../assets/img/categorie11.png" alt="" class="w-52 h-auto object-cover mt-4 ">
-                <img src="../assets/img/categorie12.png" alt="" class="w-52 h-auto object-cover mt-6">
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 ">
-                <img src="../assets/img/categorie13.png" alt="" class="w-40 h-auto object-cover ">
-                <img src="../assets/img/categorie14.png" alt="" class="w-40 h-auto object-cover ">
-                <img src="../assets/img/categorie15.png" alt="" class="w-52 h-auto object-cover mt-16 ">
-                <img src="../assets/img/categorie16.png" alt="" class="w-52 h-auto object-cover">
-            </div>
-
-            <div class="flex justify-center mt-8 space-x-4">
-                <button id="ac-prev" class="bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center">1</button>
-                <span id="ac-indicators" class="flex items-center justify-center"></span>
-                <button id="ac-next" class="bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center">2</button>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="mx-4 sm:mx-10 md:mx-20 lg:mx-36">
-        <div class="flex gap-5 items-center">
-            <div class="bg-blue-500 w-4 h-12 rounded-md"></div>
-            <h2 class="text-2xl sm:text-3xl text-blue-500">Ce mois-ci</h2>
-        </div>
-    
-        <div class="flex justify-between items-center flex-wrap gap-10 mt-4">
-            <p class="text-lg sm:text-xl ml-4 sm:ml-9">Produits les plus vendus</p>
-    
-            <button id="ac-btn2" class="bg-blue-500 text-white px-6 py-2 ml-4 sm:ml-9 rounded-lg hover:bg-blue-700 transition">
-                Voir Tous
-            </button>
-        </div>
-    </section>
-    
-
-    <section class="py-5">    
-        <div class="flex gap-5 flex-wrap justify-center py-5">
-            <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
-                <img class="w-[100%]" src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="produit">
-                <h4 id="product-name" class="text-[1rem] font-semibold capitalize">Huawei Fit A2 Active</h4>
-                <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">122</span></h5>
-                <button type="button" id="d-add-to-cart_btn"
-                    class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
-                    Ajouter Au Panier
-                </button>
-            </div>
-            <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
-                <img class="w-[100%]" src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="produit">
-                <h4 id="product-name" class="text-[1rem] font-semibold capitalize">Huawei Fit A2 Active</h4>
-                <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">122</span></h5>
-                <button type="button" id="d-add-to-cart_btn"
-                    class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
-                    Ajouter Au Panier
-                </button>
-            </div>
-            <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
-                <img class="w-[100%]" src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="produit">
-                <h4 id="product-name" class="text-[1rem] font-semibold capitalize">Huawei Fit A2 Active</h4>
-                <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">122</span></h5>
-                <button type="button" id="d-add-to-cart_btn"
-                    class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
-                    Ajouter Au Panier
-                </button>
-            </div>
-        </div>
-    </section>
-</main>
-
-</section>
-
-<section>
-    <div class="flex items-center py-10">
-        <div class="bg-blue-500 w-4 h-12 rounded-md ml-10 md:ml-36 mb-5"></div>
-        <div class="ml-5">
-            <h2 class="text-3xl text-blue-500 mt-4">Nos produits</h2>
-            <p class="text-xl mt-2">Découvrez nos produits</p>
-        </div>
-    </div>
-
-    
-    <section class="py-5">
-      
-        <div class="flex gap-5 flex-wrap justify-center py-5">
-            <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
-                <img class="w-[100%]" src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="produit">
-                <h4 id="product-name" class="text-[1rem] font-semibold capitalize">Huawei Fit A2 Active</h4>
-                <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">122</span></h5>
-                <button type="button" id="d-add-to-cart_btn"
-                    class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
-                    Ajouter Au Panier
-                </button>
-            </div>
-            <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
-                <img class="w-[100%]" src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="produit">
-                <h4 id="product-name" class="text-[1rem] font-semibold capitalize">Huawei Fit A2 Active</h4>
-                <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">122</span></h5>
-                <button type="button" id="d-add-to-cart_btn"
-                    class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
-                    Ajouter Au Panier
-                </button>
-            </div>
-            <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
-                <img class="w-[100%]" src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="produit">
-                <h4 id="product-name" class="text-[1rem] font-semibold capitalize">Huawei Fit A2 Active</h4>
-                <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">122</span></h5>
-                <button type="button" id="d-add-to-cart_btn"
-                    class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
-                    Ajouter Au Panier
-                </button>
-            </div>
-        </div>
-    </section>
-</main>
-
-</section>
-
-    <section class="py-10">
-        <div class="flex items-center">
-            <div class="bg-blue-500 w-4 h-12 rounded-md ml-10 md:ml-36 mb-5"></div>
-            <div class="ml-5">
-                <h2 class="text-3xl text-blue-500 mt-4">En Future</h2>
-                <p class="text-xl mt-2">Nouvelle Arrivée</p>
-            </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5 mx-5 md:mx-44">
-            <img src="../assets/img/image3.jpg" alt="" class="w-full h-80 object-cover rounded-lg shadow-md">
-            <img src="../assets/img/image4.jpg" alt="" class="w-full h-80 object-cover rounded-lg shadow-md">
-            <img src="../assets/img/image5.jpg" alt="" class="w-full h-80 object-cover rounded-lg shadow-md">
-            <img src="../assets/img/image6.jpg" alt="" class="w-full h-80 object-cover rounded-lg shadow-md">
-        </div>
-    </section>
-
-    <section>
-        <div class="flex flex-wrap mt-24 justify-center gap-8">
-            <div class=" p-6 mx-5 sm:mx-10 md:mx-20 ">
-                <img src="../assets/img/Services-1.png" class="w-18 h-12 text-gray-500 dark:text-gray-400 mb-3 mx-auto">
-                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white text-center">24/7 CUSTOMER SERVICE</h5>
-                <p class="mb-3 font-normal text-black-500 dark:text-gray-400 text-center">Free delivery for all orders over $140</p>
-            </div>
-    
-            <div class="max-w- p-6 mx-5 sm:mx-10 md:mx-20 ">
-                <img src="../assets/img/Services-2.png" class="w-18 h-12 text-gray-500 dark:text-gray-400 mb-3 mx-auto">
-                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white text-center">24/7 CUSTOMER SERVICE</h5>
-                <p class="mb-3 font-normal text-black-500 dark:text-gray-400 text-center">Free delivery for all orders over $140</p>
-            </div>
-    
-            <div class=" p-6 mx-5 sm:mx-10 md:mx-20 ">
-                <img src="../assets/img/Services-3.png" class="w-18 h-12 text-gray-500 dark:text-gray-400 mb-3 mx-auto">
-                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white text-center">MONEY BACK GUARANTEE</h5>
-                <p class="mb-3 font-normal text-black-500 dark:text-gray-400 text-center">We return money within 30 days</p>
-            </div>
-        </div>
-    </section>
-<script src="../assets/js/main.js"></script>
-<script src="../assets/js/acceuil.js"></script>
-</body>
 
 </body>
 
