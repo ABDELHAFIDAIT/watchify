@@ -2,6 +2,9 @@
 #close-menu_icon {
   display: none;
 }
+body {
+  font-family: 'Poppins', sans-serif;
+}
 
 @media (max-width: 640px) {
   #menu-icon {

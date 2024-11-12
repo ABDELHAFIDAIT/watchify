@@ -10,6 +10,7 @@
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="w-full">
@@ -50,7 +51,7 @@
 
   <section class="mt-[150px]">
     <div class="w-full flex flex-col align-middle text-center my-8">
-      <h1 class="text-5xl font-extrabold text-gray-800">"Watchify: The Smart Choice"</h1>
+      <h1 class="text-5xl font-extrabold text-gray-800 font-poppins">"Watchify: The Smart Choice"</h1>
       <h3 class="mt-5">Stay Ahead with the Best Smartwatches</h3>
     </div>
   </section>
@@ -99,9 +100,9 @@
       <div class="container w-[80%] flex justify-between items-center space-x-4">
 
         <div class="flex items-center space-x-2">
-          <label for="filter" class="text-gray-700 font-semibold sm:text-[10px]">Filtrer par :</label>
+          <label for="filter" class="text-gray-700 text-xxl lg:text-[32px] md:text-[24px] sm:text-[16px]">Filtrer par :</label>
           <select id="marque-select" name="marque"
-            class="form-select w-full border border-gray-300 p-2 rounded block md:hidden">
+            class="form-select w-full border-gray-300 p-2 rounded block md:hidden">
             <option value="">Select a brand</option>
             <option value="samsung">Samsung</option>
             <option value="apple">Apple</option>
@@ -111,7 +112,7 @@
 
         <div class="flex items-center space-x-2">
           <label for="sort" class="text-gray-700 font-semibold">Trier par :</label>
-          <select id="sort" class="px-4 py-2 border rounded-md text-gray-700">
+          <select id="sort" class="px-4 py-2 rounded-md text-gray-700">
             <option>Prix</option>
             <option>Nom</option>
             <option>Quantité</option>
@@ -124,8 +125,8 @@
   </section>
 
 
-  <section class="flex ">
-    <div class="p-4 border rounded-md shadow-lg w-1/5 ml-[10%] hidden md:block space-y-4 ">
+  <section class="flex mx-10">
+    <div class="p-4 rounded-md shadow-lg w-1/5 hidden md:block space-y-4 ">
 
         <div class="flex items-center space-x-3">
           <input type="checkbox" id="samsung" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
@@ -236,104 +237,102 @@
     </div>
 
     <!-- Section des Smartwatches -->
-    <section class="p-4 md:w-[100%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <section class="p-4  grid grid-cols-1   gap-6 md:w-[100%] md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-2 ">
       <!-- Grid de 12 smartwatches -->
         <!-- Card 1 -->
-        <div class="border rounded-lg shadow-md p-4 ">
+        <div class="rounded-lg shadow-md p-4 sm:h-fit ">
           <img src="../assets/img/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
           <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
           <p class="text-sm text-gray-500">Prix: 199,99€</p>
           <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au
             panier</button>
         </div>
-        <div class="border rounded-lg shadow-md p-4">
+        <div class="rounded-lg shadow-md p-4 sm:h-fit">
           <img src="../assets/img/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
           <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
           <p class="text-sm text-gray-500">Prix: 199,99€</p>
           <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au
             panier</button>
         </div>
-        <div class="border rounded-lg shadow-md p-4">
+        <div class="rounded-lg shadow-md p-4 sm:h-fit ">
           <img src="../assets/img/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
           <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
           <p class="text-sm text-gray-500">Prix: 199,99€</p>
           <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au
             panier</button>
         </div>
-        <div class="border rounded-lg shadow-md p-4">
+        <div class="rounded-lg shadow-md p-4 sm:h-fit">
           <img src="../assets/img/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
           <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
           <p class="text-sm text-gray-500">Prix: 199,99€</p>
           <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au
             panier</button>
         </div>
-        <div class="border rounded-lg shadow-md p-4">
+        <div class="rounded-lg shadow-md p-4 sm:h-fit ">
           <img src="../assets/img/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
           <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
           <p class="text-sm text-gray-500">Prix: 199,99€</p>
           <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au
             panier</button>
         </div>
-        <div class="border rounded-lg shadow-md p-4">
+        <div class="rounded-lg shadow-md p-4 sm:h-fit">
           <img src="../assets/img/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
           <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
           <p class="text-sm text-gray-500">Prix: 199,99€</p>
           <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au
             panier</button>
         </div>
-        <div class="border rounded-lg shadow-md p-4">
+        <div class="rounded-lg shadow-md p-4 sm:h-fit ">
           <img src="../assets/img/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
           <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
           <p class="text-sm text-gray-500">Prix: 199,99€</p>
           <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au
             panier</button>
         </div>
-        <div class="border rounded-lg shadow-md p-4">
+        <div class="rounded-lg shadow-md p-4 sm:h-fit">
           <img src="../assets/img/pngwing.com (2).png" alt="Smartwatch 1" class="w-full h-[50%] object-fill mb-4">
           <h3 class="text-lg font-medium text-gray-700">Smartwatch 1</h3>
           <p class="text-sm text-gray-500">Prix: 199,99€</p>
           <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au
             panier</button>
         </div>
+        
     </section>
   </section>
 
   <!-- Pagination -->
-  <section class="w-full flex justify-end">
-    <div class="flex justify-center mt-8 w-[70%] ">
+  <section class="w-full flex justify-center lg:justify-end">
+    <div class="flex justify-center mt-8 lg:w-4/5 md:w-[100%] sm:w-[100%]">
       <nav class="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
         <!-- Previous Button -->
         <a href="#"
-          class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 rounded-l-md hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-500 rounded-l-md hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
           Précédent
         </a>
 
         <!-- Page Numbers -->
         <a href="#" aria-current="page"
-          class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
           1
         </a>
         <a href="#"
-          class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
           2
         </a>
+      
+        <span class="px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-500">...</span>
         <a href="#"
-          class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
-          3
-        </a>
-        <span class="px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500">...</span>
-        <a href="#"
-          class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
           8
         </a>
         <a href="#"
-          class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
           9
         </a>
 
         <!-- Next Button -->
         <a href="#"
-          class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 rounded-r-md hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-500 rounded-r-md hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100 sm:text-sm">
           Suivant
         </a>
       </nav>
