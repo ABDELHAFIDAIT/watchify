@@ -1,8 +1,21 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
 #menu-icon,
 #close-menu_icon {
   display: none;
 }
 
+@media (max-width: 770px) {
+  #d-product-details {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #d-main-container {
+    padding: 0 20px;
+  }
+}
 @media (max-width: 640px) {
   #menu-icon {
     display: block;
