@@ -41,16 +41,16 @@ fetch("http://localhost:3000/products")
     </div>
     <div class="flex gap-2 justify-center" id="d-image-variants">
         <div
-            class="d-variant bg-blue-600 rounded-md p-2 cursor-pointer max-w-[100px] max-h-[109px] my-auto">
+            class="d-variant bg-blue-600 rounded-md p- cursor-pointer max-w-[100px] max-h-[109px] my-auto">
             <img class = "rounded-md"  src="${data[id].images[0]}" alt="product Image"
                 onclick="switchImages(this)">
         </div>
         <div
-            class="d-variant bg-blue-600 rounded-md p-2 cursor-pointer max-w-[100px] max-h-[109px] my-auto">
+            class="d-variant bg-blue-600 rounded-md p-1 cursor-pointer max-w-[100px] max-h-[109px] my-auto">
             <img class = "rounded-md" src="${data[id].images[1]}" alt="product Image" onclick="switchImages(this)">
         </div>
         <div
-            class="d-variant bg-blue-600 rounded-md p-2 cursor-pointer max-w-[100px] max-h-[109px] my-auto">
+            class="d-variant bg-blue-600 rounded-md p-1 cursor-pointer max-w-[100px] max-h-[109px] my-auto">
             <img class = "rounded-md"  src="${data[id].images[2]}" alt="product Image" onclick="switchImages(this)">
         </div>
 
@@ -70,15 +70,15 @@ fetch("http://localhost:3000/products")
     //display popular products
 
     for (let i = 0; i < 3; i++) {
-      popularProducts.innerHTML += `<a href="?${data[i].id}"><div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
+      popularProducts.innerHTML += `<div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
                     <img class="w-[100%]" src="${data[i].images[0]}" alt="product Image" style = "max-height : 200px">
-                    <h4 id="product-name" class="text-[1rem] font-semibold capitalize">${data[i].name}</h4>
+                    <a href = "?${data[i].id}"><h4 id="product-name" class="text-[1rem] font-semibold capitalize">${data[i].name}</h4></a>
                     <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">${data[i].price}</span></h5>
                     <button type="button" id="d-add-to-cart_btn"
                         class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
                         Ajouter Au Panier
                     </button>
-                </div></a>`;
+                </div>`;
     }
   });
 
