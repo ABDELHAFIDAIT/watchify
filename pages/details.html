@@ -109,10 +109,12 @@
 
                 <div class="flex gap-8 mb-5">
                     <div class="d-product-quantity flex gap-3">
-                        <button type="button" class="outline-none text-[1.5rem] hover:text-blue-600">-</button>
-                        <input type="number" name="d-quantite" id="d-quantite-input"
+                        <button id="decrement-button" type="button"
+                            class="outline-none text-[1.5rem] hover:text-blue-600">-</button>
+                        <input type="number" min="1" name="d-quantite" id="d-quantite-input"
                             class="bg-slate-100 rounded-md max-w-[100px] text-center">
-                        <button type="button" class="outline-none text-[1.5rem] hover:text-blue-600">+</button>
+                        <button id="increment-button" type="button"
+                            class="outline-none text-[1.5rem] hover:text-blue-600">+</button>
                     </div>
                     <div id="d-total-price" class="bg-slate-100 w-[100px] rounded-md flex items-center justify-center">
                         <p class="px-2">$<span>212</span></p>

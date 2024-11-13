@@ -8,16 +8,22 @@ const productShortDescription = document.getElementById(
 const productPrice = document.getElementById("new-price");
 const productBrand = document.getElementById("d-brand");
 const productStatus = document.getElementById("d-stock");
-
+const productQuantity = document.getElementById("d-quantite-input");
 const popularProducts = document.getElementById("d-popular-products");
+const totalPrice = document.getElementById("d-total-price");
 // let dataArray = [];
 
 //function to get url parameters
-const productId = new URLSearchParams(window.location.search);
-function getUrlParameter(id) {
-  return productId.get(id);
-}
-let id = 10;
+// const productId = new URLSearchParams(window.location.search);
+// function getUrlParameter(id) {
+//   return productId.get(id);
+// }
+
+var full_url = document.URL;
+var stuff = full_url.split("?");
+var id = stuff[stuff.length - 1] - 1;
+// let id = 10;
+
 fetch("http://localhost:3000/products")
   .then((responce) => responce.json())
   .then((data) => {
@@ -55,6 +61,7 @@ fetch("http://localhost:3000/products")
         productBrand.innerHTML = data[id].marque;
         productStatus.innerHTML = data[id].stock;
         productPrice.innerHTML = data[id].price;
+        totalPrice.innerHTML = data[id].price;
       }
     }
 
@@ -62,8 +69,8 @@ fetch("http://localhost:3000/products")
 
     //display popular products
 
-    for (let i = 3; i < 6; i++) {
-      popularProducts.innerHTML += `<div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
+    for (let i = 0; i < 3; i++) {
+      popularProducts.innerHTML += `<a href="?${data[i].id}"><div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
                     <img class="w-[100%]" src="${data[i].images[0]}" alt="product Image" style = "max-height : 200px">
                     <h4 id="product-name" class="text-[1rem] font-semibold capitalize">${data[i].name}</h4>
                     <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">${data[i].price}</span></h5>
@@ -71,11 +78,43 @@ fetch("http://localhost:3000/products")
                         class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
                         Ajouter Au Panier
                     </button>
-                </div>`;
+                </div></a>`;
     }
   });
 
+//image Galerie function
 let switchImages = (currentImage) => {
   var imageBox = document.getElementById(id);
   imageBox.src = currentImage.src;
 };
+
+//change product quantity function
+productQuantity.value = 1;
+
+let changeQuantity = () => {
+  document.getElementById("increment-button").addEventListener("click", () => {
+    if (productQuantity.value <= 0) {
+      productQuantity.value = 1;
+      document.getElementById("d-total-price").innerHTML =
+        productPrice.innerHTML;
+    } else {
+      productQuantity.value++;
+      document.getElementById("d-total-price").innerHTML =
+        productPrice.innerHTML * productQuantity.value;
+    }
+  });
+
+  document.getElementById("decrement-button").addEventListener("click", () => {
+    if (productQuantity.value <= 1) {
+      productQuantity.value = 1;
+      document.getElementById("d-total-price").innerHTML =
+        productPrice.innerHTML;
+    } else {
+      productQuantity.value--;
+      document.getElementById("d-total-price").innerHTML =
+        productPrice.innerHTML * productQuantity.value;
+    }
+  });
+};
+
+changeQuantity();
