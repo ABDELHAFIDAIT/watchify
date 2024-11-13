@@ -36,7 +36,7 @@ function displayProducts(products) {
   
     productCard.classList.add('product-card', 'p-4', 'shadow-md', 'rounded-md', 'text-center');
     productCard.innerHTML = `
-    <a href="details.html?id=${product.id}" class="w-full block">
+    <a href="details.html?${product.id}" class="w-full block">
       <div href="details.html?id=${product.id}" class="rounded-lg shadow-md p-4 h-[400px] flex flex-col">
         <img src="${product.images[0]}" alt="${product.name}" class="w-full h-40 object-contain rounded-md mb-2">
         <h3 class="text-sm font-semibold text-gray-800 h-9 overflow-hidden">${product.name}</h3>
