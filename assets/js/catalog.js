@@ -24,6 +24,7 @@ function btnNextClike() {
   productContainer.innerHTML=""
     const limitedProducts = data.slice(min+8, max+8);
     dataProduct.push(...data);
+    console.log(limitedProducts);
     displayProducts(limitedProducts); 
 
   });
