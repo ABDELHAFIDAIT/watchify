@@ -15,6 +15,7 @@ var imageBox = document.getElementById("image-box");
 //   return productId.get(id);
 // }
 
+
 fetch("http://localhost:3000/products")
   .then((responce) => responce.json())
   .then((data) => {
