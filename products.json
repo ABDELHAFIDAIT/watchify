@@ -1,5 +1,6 @@
 {
-    "product":{
+  "products": [
+    {
       "id": 1,
       "name": "Apple Watch Series 8",
       "marque": "Apple",
@@ -299,5 +300,5 @@
         "https://www.cdiscount.com/pdt2/1/2/5/2/700x700/opp6944284678125/rw/oppo-band-noir-montre-connectee.jpg"
       ]
     }
+  ]
 }
-  
