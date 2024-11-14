@@ -18,7 +18,9 @@ const totalPrice = document.getElementById("d-total-price");
 // function getUrlParameter(id) {
 //   return productId.get(id);
 // }
-
+function show(id) {
+  console.log("id", id);
+}
 var full_url = document.URL;
 var stuff = full_url.split("?");
 var id = stuff[stuff.length - 1] - 1;
@@ -41,7 +43,7 @@ fetch("http://localhost:3000/products")
     </div>
     <div class="flex gap-2 justify-center" id="d-image-variants">
         <div
-            class="d-variant bg-blue-600 rounded-md p- cursor-pointer max-w-[100px] max-h-[109px] my-auto">
+            class="d-variant bg-blue-600 rounded-md p-1 cursor-pointer max-w-[100px] max-h-[109px] my-auto">
             <img class = "rounded-md"  src="${data[id].images[0]}" alt="product Image"
                 onclick="switchImages(this)">
         </div>
@@ -72,9 +74,9 @@ fetch("http://localhost:3000/products")
     for (let i = 0; i < 3; i++) {
       popularProducts.innerHTML += `<div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
                     <img class="w-[100%]" src="${data[i].images[0]}" alt="product Image" style = "max-height : 200px">
-                    <a href = "?${data[i].id}"><h4 id="product-name" class="text-[1rem] font-semibold capitalize">${data[i].name}</h4></a>
+                    <a href = "?${data[i].id}"><h4 id="product-name" class="text-[1rem] text-center font-semibold capitalize hover:text-blue-600">${data[i].name}</h4></a>
                     <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">${data[i].price}</span></h5>
-                    <button type="button" id="d-add-to-cart_btn"
+                    <button type="button" id="d-add-to-cart_btn" onclick = "show(${data[i].id}"
                         class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
                         Ajouter Au Panier
                     </button>
@@ -99,8 +101,9 @@ let changeQuantity = () => {
         productPrice.innerHTML;
     } else {
       productQuantity.value++;
-      document.getElementById("d-total-price").innerHTML =
-        productPrice.innerHTML * productQuantity.value;
+      document.getElementById("d-total-price").innerHTML = (
+        productPrice.innerHTML * productQuantity.value
+      ).toFixed(2);
     }
   });
 
@@ -111,10 +114,15 @@ let changeQuantity = () => {
         productPrice.innerHTML;
     } else {
       productQuantity.value--;
-      document.getElementById("d-total-price").innerHTML =
-        productPrice.innerHTML * productQuantity.value;
+      document.getElementById("d-total-price").innerHTML = (
+        productPrice.innerHTML * productQuantity.value
+      ).toFixed(2);
     }
   });
 };
+
+//Fonction d'ajout au panier
+
+let ajouterAuPanier = (id) => {};
 
 changeQuantity();
