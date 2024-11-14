@@ -1,9 +1,17 @@
+const { log } = require("console");
+
 // *************************************************************** Event handlers ********************************
 let gridProduit = document.getElementById('produit');
 let btnNext=document.getElementById('cata_btn_next');
 const productContainer = document.getElementById('produits_container');
 let min=0
 let max=8
+
+let paraGraph=document.getElementById('paragrapher_prix')
+let ImageCata=document.getElementById('image-principale')
+let i=0;
+
+
 
 function deselectOtherCheckboxes(selectedCheckbox) {
   const checkboxes = document.querySelectorAll('input[name="marque"]');
@@ -14,21 +22,21 @@ function deselectOtherCheckboxes(selectedCheckbox) {
   });
 }
 
-function btnNextClike() {
+// function btnNextClike() {
 
-  fetch('http://localhost:3000/products')
-.then(res => res.json())
-  .then(data => {
-    console.log(data);
+//   fetch('http://localhost:3000/products')
+// .then(res => res.json())
+//   .then(data => {
+//     console.log(data);
     
-  productContainer.innerHTML=""
-    const limitedProducts = data.slice(min+8, max+8);
-    dataProduct.push(...data);
-    console.log(limitedProducts);
-    displayProducts(limitedProducts); 
+//   productContainer.innerHTML=""
+//     const limitedProducts = data.slice(min+8, max+8);
+//     dataProduct.push(...data);
+//     console.log(limitedProducts);
+//     displayProducts(limitedProducts); 
 
-  });
-}
+//   });
+// }
 
 function displayProducts(products) {
   productContainer.innerHTML = '';
@@ -54,6 +62,8 @@ function displayProducts(products) {
     productContainer.appendChild(productCard);
   });
 }
+btnNext.addEventListener('click', btnNextClike);
+const dataProduct = []; 
 
 
 fetch('http://localhost:3000/products')
@@ -64,10 +74,16 @@ fetch('http://localhost:3000/products')
     displayProducts(limitedProducts); 
   });
 
-btnNext.addEventListener('click', btnNextClike);
-const dataProduct = []; 
 
 
+setInterval(function() {
+  console.log(dataProduct);
+//   paraGraph.textContent=`${dataProduct[i].price}`
+//  ImageCata.src=`${dataProduct[i].images[0]}`
+ 
+ 
+ i++;
+ }, 1000);
 
 
 

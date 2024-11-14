@@ -1,22 +1,8 @@
 {
-<<<<<<< HEAD
   "dependencies": {
     "json-server": "^1.0.0-beta.3"
   },
   "scripts": {
     "server": "json-server --watch products.json"
-=======
-  "name": "watchify",
-  "version": "1.0.0",
-  "main": "tailwind.config.js",
-  "scripts": {
-    "server": "json-server --watch products.json"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "json-server": "^1.0.0-beta.3"
->>>>>>> 410a8679a5429a8bf9f4ffaf0d48a8bf723e26f7
   }
 }
