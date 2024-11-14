@@ -111,10 +111,12 @@
 
                 <div class="flex gap-8 mb-5">
                     <div class="d-product-quantity flex gap-3">
-                        <button type="button" class="outline-none text-[1.5rem] hover:text-blue-600">-</button>
-                        <input type="number" name="d-quantite" id="d-quantite-input"
+                        <button id="decrement-button" type="button"
+                            class="outline-none text-[1.5rem] hover:text-blue-600">-</button>
+                        <input type="number" min="1" name="d-quantite" id="d-quantite-input"
                             class="bg-slate-100 rounded-md max-w-[100px] text-center">
-                        <button type="button" class="outline-none text-[1.5rem] hover:text-blue-600">+</button>
+                        <button id="increment-button" type="button"
+                            class="outline-none text-[1.5rem] hover:text-blue-600">+</button>
                     </div>
                     <div id="d-total-price" class="bg-slate-100 w-[100px] rounded-md flex items-center justify-center">
                         <p class="px-2">$<span>212</span></p>
@@ -172,7 +174,7 @@
         </main>
         <section class="bg-stone-100 py-3 px-5 rounded-md drop-shadow-sm mb-10">
             <h2 class="text-[1.5rem] font-semibold mb-4">Description</h2>
-            <p class="text-sm font-light">
+            <p class="text-sm font-light" id="d-product-description">
                 Votre assistant personnel
                 Bienvenue dans la prochaine génération d’assistance avec notre Future Helper Robot. Conçu avec une
                 intelligence artificielle de pointe, ce compagnon robotique sert d'assistant personnel, s'intégrant
@@ -203,8 +205,8 @@
                 Les Produits Populaire
             </h2>
 
-            <div class="flex gap-5 flex-wrap justify-center py-5">
-                <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
+            <div class="flex gap-5 flex-wrap justify-center py-5" id="d-popular-products">
+                <!-- <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
                     <img class="w-[100%]" src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="produit">
                     <h4 id="product-name" class="text-[1rem] font-semibold capitalize">Huawei Fit A2 Active</h4>
                     <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">122</span></h5>
@@ -230,7 +232,7 @@
                         class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
                         Ajouter Au Panier
                     </button>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
