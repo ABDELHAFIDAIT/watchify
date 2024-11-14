@@ -70,18 +70,6 @@ let nextbtn =document.getElementById('ac-next');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
- 
 // scrol.addEventListener("wheel",(e) => {
 //     e.preventDefault();
 //     scrol.scrollLeft += e.deltaY;
