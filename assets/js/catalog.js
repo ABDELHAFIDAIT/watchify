@@ -1,4 +1,25 @@
-const { log } = require("console");
+// ***************************************************************  Variable names
+
+
+// ***************************************************************  Fonctions ********************************
+
+function deselectOtherCheckboxes(selectedCheckbox) {
+    const checkboxes = document.querySelectorAll('input[name="marque"]');
+        checkboxes.forEach(checkbox => {
+      if (checkbox !== selectedCheckbox) {
+        checkbox.checked = false;
+      }
+    });
+  }
+// :::::::::::::
+
+fetch('http://localhost:3000/products')
+.then(res => res.json())
+.then(data => {
+  console.log(data);
+})
+
+// *************************************************************** Event handlers ********************************
 
 // *************************************************************** Event handlers ********************************
 let gridProduit = document.getElementById("produit");
@@ -20,21 +41,21 @@ function deselectOtherCheckboxes(selectedCheckbox) {
   });
 }
 
-// function btnNextClike() {
+function btnNextClike() {
 
-//   fetch('http://localhost:3000/products')
-// .then(res => res.json())
-//   .then(data => {
-//     console.log(data);
+  fetch('http://localhost:3000/products')
+.then(res => res.json())
+  .then(data => {
+    console.log(data);
 
-//   productContainer.innerHTML=""
-//     const limitedProducts = data.slice(min+8, max+8);
-//     dataProduct.push(...data);
-//     console.log(limitedProducts);
-//     displayProducts(limitedProducts);
+  productContainer.innerHTML=""
+    const limitedProducts = data.slice(min+8, max+8);
+    dataProduct.push(...data);
+    console.log(limitedProducts);
+    displayProducts(limitedProducts);
 
-//   });
-// }
+  });
+}
 
 function displayProducts(products) {
   productContainer.innerHTML = "";
@@ -79,8 +100,9 @@ fetch("http://localhost:3000/products")
 
 setInterval(function () {
   console.log(dataProduct);
-  //   paraGraph.textContent=`${dataProduct[i].price}`
-  //  ImageCata.src=`${dataProduct[i].images[0]}`
-
-  i++;
-}, 1000);
+//   paraGraph.textContent=`${dataProduct[i].price}`
+//  ImageCata.src=`${dataProduct[i].images[0]}`
+ 
+ 
+ i++;
+ }, 1000);
