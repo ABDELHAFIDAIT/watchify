@@ -23,10 +23,10 @@ function show(id) {
 }
 var full_url = document.URL;
 var stuff = full_url.split("?");
-var id = stuff[stuff.length - 1] - 1;
+var id = stuff[1];
 // let id = 10;
 
-fetch("http://localhost:3000/produits")
+fetch(`http://localhost:3000/produits/${id}`)
   .then((responce) => responce.json())
   .then((data) => {
     // data.map((data) => {
@@ -35,8 +35,8 @@ fetch("http://localhost:3000/produits")
     // console.log(data);
 
     //display product details
-    for (let i = 0; i < data.length; i++) {
-      if (i == id) {
+    // for (let i = 0; i < data.length; i++) {
+      // if (i == id) {
         productGalerie.innerHTML = `<div class="mb-5 flex justify-center" id="d-image-container">
         <img id=${id} src="${data[id].images[0]}" alt="product Image"
             style="width: 100%; max-width: 450px;">
@@ -64,8 +64,8 @@ fetch("http://localhost:3000/produits")
         productStatus.innerHTML = data[id].stock;
         productPrice.innerHTML = data[id].price;
         totalPrice.innerHTML = data[id].price;
-      }
-    }
+      // }
+    // }
 
     // console.log("data", data);
 

@@ -42,7 +42,7 @@ function displayProducts(min, max) {
     productCard.innerHTML = `
       
         <img src="${product.images[0]}" alt="${product.name}" class="w-full h-40 object-contain rounded-md mb-2">
-        <h3 class="text-sm font-semibold text-gray-800 h-9 overflow-hidden">${product.name}</h3>
+        <a href="details.html?${product.id}"><h3 class="text-sm font-semibold text-gray-800 h-9 overflow-hidden">${product.name}</h3></a>
         <p class="text-gray-600 text-xs h-fit overflow-hidden flex-grow">${product.short_description}</p>
         <p class="text-blue-600 font-bold h-[30px]">${product.price}</p>
         <div class="mt-auto">
