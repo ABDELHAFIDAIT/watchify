@@ -59,41 +59,19 @@ document.addEventListener('DOMContentLoaded' ,function(){
     fetchproducts('http://localhost:3000/produits');
 })
 
+$(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+        items : 1,
+        nav:true,
+        loop:true,
+        autoplay:true,
+        autoplayTimeout:2000,
+    });
+  });
 
 
 
-let scrol =document.querySelector(".category");
-let prevbtn= document.getElementById('ac-prev');
-let nextbtn =document.getElementById('ac-next');
- let partie1= document.querySelector('.ac-partie1');
- let partie2= document.querySelector('.ac-partie2');
 
 
 
-// scrol.addEventListener("wheel",(e) => {
-//     e.preventDefault();
-//     scrol.scrollLeft += e.deltaY;
-// })
-// nextbtn.addEventListener('click',()=> {
-//     nextbtn.style.display = "none";
 
-// })
-
-// prevbtn.addEventListener('click',()=> {
-//     prevbtn.style.display = "block";
-// })
-
-
-// console.log(scrol)
-
-// const btn1 = document.querySelector("#crud-modal");
-// let isclick = true;
-// let btn = function() {
-//     if (isclick == 1) {
-//         btn1.style.display = "block";
-//         isclick = 0;
-//     } else {
-//         btn1.style.display = "none";
-//         isclick = 1;
-//     }
-// }
