@@ -137,3 +137,15 @@ function validateForm(){
     }
 }
 
+
+
+fetch(`http://localhost:3000/produits`)
+.then(res => res.json())
+.then(products => {
+    for(let i=0 ; i<5 ; i++){
+        const imgProduct = document.createElement('img');
+        imgProduct.src = `${products[i].images[0]}` ;
+        imgProduct.className = "w-[200px] h-[200px]" ;
+        document.getElementById('interested').appendChild(imgProduct);
+    }
+})
