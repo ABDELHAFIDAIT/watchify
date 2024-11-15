@@ -51,6 +51,11 @@ arrayPrd.map(Prd => {
         pProduct.querySelector('#inc-qtt-btn').addEventListener("click", function(){
             document.getElementById("total-price-panier").innerText = "";
             const currentTarget = this.previousElementSibling ;
+
+            if(currentTarget.value < product.stock){
+                totalPanier += product.price ;
+            }
+
             currentTarget.value = currentTarget.value<product.stock ? +currentTarget.value +1 : product.stock;
 
             const currentTargetPrice = currentTarget.parentElement.nextElementSibling;
@@ -59,18 +64,17 @@ arrayPrd.map(Prd => {
             document.getElementById(`${product.id}`).innerText = currentTarget.value;
             let variantIncPrice = document.getElementById(`total-${product.id}`);
             variantIncPrice.innerText = (currentTarget.value * product.price).toFixed(2);
-
-            if(currentTarget.value != product.stock){
-                totalPanier += product.price ;
-            }
         
             document.getElementById("total-price-panier").innerText = totalPanier.toFixed(2);
         })
 
         pProduct.querySelector('#dec-qtt-btn').addEventListener("click", function(){
-            document.getElementById("total-price-panier").innerText = "";
+            // document.getElementById("total-price-panier").innerText = "";
             const currentTarget = this.nextElementSibling ;
 
+            if(currentTarget.value > 1){
+                totalPanier -= product.price ;
+            }
 
             currentTarget.value = currentTarget.value>2 ? +currentTarget.value -1 : 1;
 
@@ -81,9 +85,7 @@ arrayPrd.map(Prd => {
             let variantIncPrice = document.getElementById(`total-${product.id}`);
             variantIncPrice.innerText = (currentTarget.value * product.price).toFixed(2);
 
-            // if(currentTarget.value > 1){
-            //     totalPanier -= product.price ;
-            // }
+            
         
             document.getElementById("total-price-panier").innerText = totalPanier.toFixed(2);
         })
