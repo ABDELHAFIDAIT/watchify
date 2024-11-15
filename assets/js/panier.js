@@ -88,10 +88,6 @@ arrayPrd.map(Prd => {
             document.getElementById("total-price-panier").innerText = totalPanier.toFixed(2);
         })
 
-        // 
-        
-        // document.getElementById("total-price-panier").innerText = totalPanier.toFixed(2);
-
     })  
 })
 
