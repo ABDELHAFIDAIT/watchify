@@ -19,7 +19,7 @@
   <Header class="flex items-center justify-between py-3 px-5 my-4 mx-auto rounded-md bg-white drop-shadow-md w-[100%]"
     style="max-width: 1000px; position: fixed;top: 0;left: 50%; transform: translate(-50%); z-index:99;">
     <div class="logo w-[70px] h-[50px]">
-      <img class="w-[100%] h-[100%]" src="../assets/img/watchify.png" alt="watchify">
+      <img class="w-[100%] h-[100%]" src="../assets/img/watchify-white-logo.png" alt="watchify">
     </div>
     <form action="/" class="bg-slate-100 rounded-md py-1 pr-3 flex items-center justify-between w-[30%] drop-shadow-sm">
       <input type="search"
@@ -80,7 +80,7 @@
         <img id="image-principale" src="../assets/img/cata_Left.png" alt="Previous">
       </button>
       <div class="flex flex-col items-center justify-center gap-5">
-        <img src="../assets/img/cata_image1.png" alt="Smartwatch Image 1" class="w-[80%] h-[60%] object-contain">
+        <img id="cata_image_caroussel" src="../assets/img/cata_image1.png" alt="Smartwatch Image 1" class="w-[80%] h-[280px] object-contain">
         <div class="h-[5px] w-1/2 bg-black rounded-[100%] blur-md self-center"></div>
       </div>
       <button id="btn_next" class="">
@@ -103,16 +103,24 @@
             <option value="">Select a brand</option>
             <option value="samsung">Samsung</option>
             <option value="apple">Apple</option>
-            <option value="oraimo">Oraimo</option>
+            <option value="Fitbit">Fitbit</option>
+            <option value="Huawei">Huawei</option>
+            <option value="Garmin">Garmin</option>
+            <option value="Amazfit">Amazfit</option>
+            <option value="Fossil">Fossil</option>
+            <option value="Xiaomi">Xiaomi</option>
+            <option value="Oppo">Oppo</option>
+            <option value="TicWatch">TicWatch</option>
+            <option value="Withings">Withings</option>
           </select>
         </div>
 
         <div class="flex items-center space-x-2">
           <label for="sort" class="text-gray-700 font-semibold">Trier par :</label>
           <select id="sort" class="px-4 py-2 rounded-md text-gray-700">
-            <option>Prix</option>
-            <option>Nom</option>
-            <option>Quantité</option>
+            <option>----</option>
+            <option value="price">Prix</option>
+            <option value="stock">Quantité</option>
           </select>
         </div>
 
@@ -126,11 +134,11 @@
     <div class="p-4 rounded-md shadow-lg w-1/5 hidden md:block space-y-4 ">
 
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="samsung" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="samsung" value="Samsung" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="filterByBrand()">
         <label for="samsung" class="flex items-center space-x-2">
-          <img src="../assets/img/cata_image1.png" alt="Samsung" class="w-6 h-6">
-          <span class="text-gray-700">Samsung</span>
+          <img src="../assets/img/apple.png" alt="Samsung" class="w-6 h-6">
+          <span class="text-gray-700">Apple</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
@@ -146,8 +154,8 @@
         <input type="checkbox" id="apple" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
           onclick="deselectOtherCheckboxes(this)">
         <label for="apple" class="flex items-center space-x-2">
-          <img src="../assets/img/apple-logo.png" alt="Apple" class="w-6 h-6">
-          <span class="text-gray-700">Apple</span>
+          <img src="../assets/img/direction.png" alt="Apple" class="w-6 h-6">
+          <span class="text-gray-700">Garmin</span>
         </label>
       </div>
 
@@ -155,8 +163,8 @@
         <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
           onclick="deselectOtherCheckboxes(this)">
         <label for="oraimo" class="flex items-center space-x-2">
-          <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
-          <span class="text-gray-700">Oraimo</span>
+          <img src="../assets/img/direction.png" alt="Oraimo" class="w-6 h-6">
+          <span class="text-gray-700">Fitbit</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
@@ -164,7 +172,7 @@
           onclick="deselectOtherCheckboxes(this)">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
-          <span class="text-gray-700">Oraimo</span>
+          <span class="text-gray-700">Huawei</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
@@ -172,7 +180,7 @@
           onclick="deselectOtherCheckboxes(this)">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
-          <span class="text-gray-700">Oraimo</span>
+          <span class="text-gray-700">Amazfit</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
@@ -180,7 +188,15 @@
           onclick="deselectOtherCheckboxes(this)">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
-          <span class="text-gray-700">Oraimo</span>
+          <span class="text-gray-700">Fossil</span>
+        </label>
+      </div>
+      <div class="flex items-center space-x-3">
+        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="deselectOtherCheckboxes(this)">
+        <label for="oraimo" class="flex items-center space-x-2">
+          <img src="../assets/img/xiaomi.png" alt="Oraimo" class="w-6 h-6">
+          <span class="text-gray-700">Xiaomi</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
@@ -188,7 +204,15 @@
           onclick="deselectOtherCheckboxes(this)">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
-          <span class="text-gray-700">Oraimo</span>
+          <span class="text-gray-700">Oppo</span>
+        </label>
+      </div>
+      <div class="flex items-center space-x-3">
+        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="deselectOtherCheckboxes(this)">
+        <label for="oraimo" class="flex items-center space-x-2">
+          <img src="../assets/img/xiaomi.png" alt="Oraimo" class="w-6 h-6">
+          <span class="text-gray-700">TicWatch</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
@@ -196,42 +220,10 @@
           onclick="deselectOtherCheckboxes(this)">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
-          <span class="text-gray-700">Oraimo</span>
+          <span class="text-gray-700">Withings</span>
         </label>
       </div>
-      <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
-        <label for="oraimo" class="flex items-center space-x-2">
-          <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
-          <span class="text-gray-700">Oraimo</span>
-        </label>
-      </div>
-      <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
-        <label for="oraimo" class="flex items-center space-x-2">
-          <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
-          <span class="text-gray-700">Oraimo</span>
-        </label>
-      </div>
-      <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
-        <label for="oraimo" class="flex items-center space-x-2">
-          <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
-          <span class="text-gray-700">Oraimo</span>
-        </label>
-      </div>
-      <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
-        <label for="oraimo" class="flex items-center space-x-2">
-          <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
-          <span class="text-gray-700">Oraimo</span>
-        </label>
-      </div>
-    </div>
+          </div>
 
     <!-- Section des Smartwatches -->
     <section id="produits_container"
@@ -245,10 +237,10 @@
     <div class="flex justify-center mt-8 lg:w-4/5 md:w-[100%] sm:w-[100%]">
       <nav class="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
         <!-- Previous Button -->
-        <a href="#"
-          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-500 rounded-l-md hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+        <button 
+        id="cata_btn_prev" class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-500 rounded-l-md hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
           Précédent
-        </a>
+        </button>
 
         <!-- Page Numbers -->
         <a href="#" aria-current="page"
