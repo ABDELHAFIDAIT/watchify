@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchify - Panier</title>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body{
+            font-family: "Poppins";
+            height: 2500px;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="../assets/css/output.css">
+    <link rel="stylesheet" href="../assets/css/input.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    
+    <main>
+
+        <section class="mx-20 py-10">
+            <div class="flex items-center gap-3">
+                    <div class="w-5 h-14 bg-blue-600 rounded-sm"></div>
+                    <h1 class="font-bold text-blue-600 text-2xl">Panier (<span id="nombre-produits"></span> Articles)</h1>
+            </div>
+
+            <div id="panier-products-container" class="flex flex-col gap-3 my-10">
+                
+            </div>
+
+            <div class="flex justify-between items-center flex-wrap gap-5 self-center">
+                    <div class="flex">
+                        <input class="bg-gray-100 px-5 py-2 border-gray-200 border-solid border rounded-s-md" type="text" placeholder="Code Promo">
+                        <button class="px-4 py-2 bg-blue-500 font-medium text-white rounded-r-md transition-all duration-500 hover:bg-blue-950" type="button">OK</button>
+                    </div>
+                    <a href="#"><button id="ok" class="px-7 py-2 bg-blue-600 text-white font-medium rounded-md transition-all duration-500 hover:bg-blue-950">Continuer les Achats</button></a>
+            </div>
+        </section>
+
+        <section class="mx-20 py-10">
+            <div class="flex items-center gap-3">
+                <div class="w-5 h-14 bg-blue-600 rounded-sm"></div>
+                <h1 class="font-bold text-blue-600 text-2xl">Vous pourriez être intéressé par ...</h1>
+            </div>
+
+            <div class="flex items-center justify-center py-10 flex-wrap">
+                <img src="../assets/img/watch.jpg" alt="">
+                <img src="../assets/img/watch.jpg" alt="">
+                <img src="../assets/img/watch.jpg" alt="">
+                <img src="../assets/img/watch.jpg" alt="">
+            </div>
+        </section>
+
+        <section class="mx-20 py-10">
+            <div class="flex items-center gap-3">
+                <div class="w-5 h-14 bg-blue-600 rounded-sm"></div>
+                <h1 class="font-bold text-blue-600 text-2xl">Confirmation de Commande</h1>
+            </div>
+
+            <div class="flex gap-10 mt-10 flex-wrap">
+                <div class="flex flex-col flex-1 bg-gray-100 px-5 py-5 gap-5 border border-gray-300 rounded-md h-min ">
+                    <h1 class="text-2xl font-medium">Total du Panier</h1>
+                    <div id="total-panier-products" class="flex flex-col gap-5 px-3">
+                        
+                    </div>
+                    <hr class="border-black">
+                    <div class="flex justify-between items-center px-3">
+                        <h1 class="text-xl font-semibold">Total</h1>
+                        <h2 id="total-price-panier" class="font-semibold justify-self-end"></h2>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-1">
+                    <form action="" id="form-devis" class="flex flex-col">
+                        <label class="mb-1 ml-1" for="name">Nom Complet <span id="alert-name" class="text-sm text-red-500 ml-5"></span></label>
+                        <input class="focus:border-blue-950 outline-none py-2 rounded-md border border-gray-300 px-3 bg-gray-200 placeholder:text-gray-500" placeholder="Ex: Peter Johnson" type="text" name="name" required>
+
+                        <label class="mt-4 mb-1 ml-1" for="phone">Numéro de Téléphone<span id="alert-name" class="text-sm text-red-500 ml-5"></span></label>
+                        <input class="focus:border-blue-950 outline-none py-2 rounded-md border border-gray-300 px-3 bg-gray-200 placeholder:text-gray-500" placeholder="Ex: +212 612345678" type="tel" name="phone" pattern="+212 6[0-9]{8}" required>
+
+                        <label class="mt-4 mb-1 ml-1" for="email">Adresse Email<span id="alert-name" class="text-sm text-red-500 ml-5"></span></label>
+                        <input class="focus:border-blue-950 outline-none py-2 rounded-md border border-gray-300 px-3 bg-gray-200 placeholder:text-gray-500" placeholder="Ex: j.peter@example.com" type="email" name="email" required>
+
+                        <label class="mt-4 mb-1 ml-1" for="adress">Adresse<span id="alert-name" class="text-sm text-red-500 ml-5"></span></label>
+                        <input class="focus:border-blue-950 outline-none py-2 rounded-md border border-gray-300 px-3 bg-gray-200 placeholder:text-gray-500" placeholder="Ex: street, neighberhood, city, country" type="text" name="adress" required>
+
+                        <button id="download" class="py-2 mt-4 bg-blue-600 text-white rounded-md transition-all duration-500 hover:bg-blue-950" type="submit">Confirmer la Commande</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="bg-blue-950 py-10">
+            <div class="mx-20 text-white flex justify-between items-center flex-wrap gap-10">
+                <div class="flex-1">
+                    <h1 class="text-3xl font-semibold mb-3">Notre Newsletter</h1>
+                    <p class="font-light text-sm">Recevoir  notre vouveaux produit et mise à jour</p>
+                </div>
+                <form class="flex border-none p-2 bg-white rounded-md flex-1">
+                    <input class="grow border-none outline-none px-5 text-black" type="email" name="" placeholder="Email Example ..">
+                    <button class="bg-blue-950 py-2 px-6 rounded-md transition-all duration-500 hover:bg-blue-600" type="button">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    
+    </main>
+
+    <script src="../assets/js/panier.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
