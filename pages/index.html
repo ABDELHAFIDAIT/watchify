@@ -46,6 +46,14 @@
         width: 150px;
         object-fit: cover;
     }
+    #pagination{
+        /* margin-left: 600px; */
+        margin-top: 20px;
+    }
+    #prev{
+        width: 200px;
+        border-radius: ;
+    }
  
     </style>
 </head>
@@ -144,7 +152,7 @@
             <img src="../assets/img/categorie7.png" alt="" class="w-[150px] object-cover">
             <img src="../assets/img/categorie8.png" alt="" class="w-[150px] object-cover">
         </div>
-        
+
         <div class="items grid grid-cols-2 md:grid-cols-4 gap-4 mx-4 md:mx-24 ml-20">
             <img src="../assets/img/categorie9.png" alt="" class="w-[150px] object-cover">
             <img src="../assets/img/categorie10.png" alt="" class="w-[150px] object-cover">
@@ -268,7 +276,7 @@
 
     <section class="py-5">    
         <!-- <div class="flex gap-5 flex-wrap justify-center py-5"> -->
-            <div class="products flex gap-5 flex-wrap justify-center py-5">
+            <div class="products flex gap-5  justify-center py-5">
                 <!-- <div class="product">
                     <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
                         <img class="w-[100%]" src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="produit" style="min_height: 200px">
@@ -299,11 +307,16 @@
 
     
     <section class="py-5">
-      
-        <div class=" products6  flex gap-5 flex-wrap justify-center py-5">
-                               
+        <div class="products6 flex gap-5 flex-wrap w-auto justify-center py-5"></div>
+        <div class="pagination flex gap-3 justify-center items-center" id="pagination">
+            <!-- <button id="prev">Previous</button> -->
+            <svg id="prev" fill="#004ac2" width="32px" height="64px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" stroke="#004ac2" transform="rotate(180)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path></g></svg>
+            <p id="page-numbers"></p>
+            <!-- <button id="next">Next</button> -->
+            <svg id="next" fill="#004ac2" width="32px" height="64px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" stroke="#004ac2"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path></g></svg>
         </div>
     </section>
+    
 </main>
 
 </section>
