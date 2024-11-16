@@ -1,7 +1,4 @@
 var totalPanier = 0 ;
-
-var pTotal ;
-
 let arrayPrd = localStorage.getItem('prd').split('-');
 
 arrayPrd.map(Prd => {
@@ -10,6 +7,8 @@ arrayPrd.map(Prd => {
     fetch(`http://localhost:3000/produits/${prd[0]}`)
     .then(res => res.json())
     .then(product => {
+
+        // Ajouter Chaque Produit au Panier
         const pProduct = document.createElement('div');
         pProduct.id = "product-panier";
 
@@ -34,6 +33,12 @@ arrayPrd.map(Prd => {
 
         document.getElementById("panier-products-container").appendChild(pProduct);
 
+
+        // Mettre à Jour le Nombre des Produits Ajoutés au Panier
+        document.getElementById("cout-products").innerText = document.getElementById("panier-products-container").childElementCount;
+
+
+        // Mettre à Jour les Produits du Total Panier
         const tpProduct = document.createElement('div');
         tpProduct.className = 'grid grid-cols-[1fr_80px_80px] gap-3';
 
@@ -45,100 +50,160 @@ arrayPrd.map(Prd => {
         document.getElementById('total-panier-products').appendChild(tpProduct);
 
         totalPanier+= product.price * prd[1];
-        
         document.getElementById("total-price-panier").innerText = totalPanier.toFixed(2);
 
-        pProduct.querySelector('#inc-qtt-btn').addEventListener("click", function(){
-            document.getElementById("total-price-panier").innerText = "";
-            const currentTarget = this.previousElementSibling ;
-
-            if(currentTarget.value < product.stock){
-                totalPanier += product.price ;
-            }
-
-            currentTarget.value = currentTarget.value<product.stock ? +currentTarget.value +1 : product.stock;
-
-            const currentTargetPrice = currentTarget.parentElement.nextElementSibling;
-            currentTargetPrice.innerText = (currentTarget.value * product.price).toFixed(2) + " $";
-
-            document.getElementById(`${product.id}`).innerText = currentTarget.value;
-            let variantIncPrice = document.getElementById(`total-${product.id}`);
-            variantIncPrice.innerText = (currentTarget.value * product.price).toFixed(2);
         
+
+        // Fonction de Mise à Jour du Panier et Total Panier lors de l'Incrémentation du Quantité 
+        pProduct.querySelector('#inc-qtt-btn').addEventListener("click", function(){
+            const currentTarget = this.previousElementSibling;
+            const currentQuantity = parseInt(currentTarget.value, 10);
+            const currentPrice = product.price;
+            const maxStock = product.stock;
+        
+            // Augmentation de Quantité et Mise à Jour du Prix Totale du Panier
+            if (currentQuantity < maxStock) {
+                currentTarget.value = currentQuantity + 1;
+                totalPanier += currentPrice;
+            } else {
+                currentTarget.value = maxStock;
+            }
+        
+            // Mise à Jour du Prix Totale du Produit Séléctionné
+            const currentTargetPrice = currentTarget.parentElement.nextElementSibling;
+            currentTargetPrice.innerText = (currentTarget.value * currentPrice).toFixed(2) + " $";
+        
+            // Affichage du Quantité et du Prix Totale du Produit Séléctionné
+            document.getElementById(`${product.id}`).innerText = currentTarget.value; 
+            const variantIncPrice = document.getElementById(`total-${product.id}`); 
+            variantIncPrice.innerText = (currentTarget.value * currentPrice).toFixed(2);
+        
+            // Affichage du Prix Total du Panier
             document.getElementById("total-price-panier").innerText = totalPanier.toFixed(2);
         })
 
-        pProduct.querySelector('#dec-qtt-btn').addEventListener("click", function(){
-            // document.getElementById("total-price-panier").innerText = "";
-            const currentTarget = this.nextElementSibling ;
 
-            if(currentTarget.value > 1){
-                totalPanier -= product.price ;
+
+        // Fonction de Mise à Jour du Panier et Total Panier lors de la Décrémentation du Quantité 
+        pProduct.querySelector('#dec-qtt-btn').addEventListener("click", function () {
+            const currentTarget = this.nextElementSibling;
+            const currentQuantity = parseInt(currentTarget.value, 10);
+            const currentPrice = product.price;
+        
+            // Réduction de Quantité et Mise à Jour du Prix Totale du Panier
+            if (currentQuantity > 1) {
+                currentTarget.value = currentQuantity - 1;
+                totalPanier -= currentPrice;
+            } else {
+                currentTarget.value = 1;
+            }
+        
+            // Mise à Jour du Prix Totale du Produit Séléctionner
+            const currentTargetPrice = currentTarget.parentElement.nextElementSibling;
+            currentTargetPrice.innerText = (currentTarget.value * currentPrice).toFixed(2) + " $";
+        
+            // Affichage du Quantité et du Prix Totale du Produit Séléctionné
+            document.getElementById(`${product.id}`).innerText = currentTarget.value;
+            const varDecPrice = document.getElementById(`total-${product.id}`);
+            varDecPrice.innerText = (currentTarget.value * currentPrice).toFixed(2);
+        
+            // Affichage du Prix Total du Panier
+            document.getElementById("total-price-panier").innerText = totalPanier.toFixed(2);
+        });
+
+
+
+        pProduct.querySelector('#delete-product').addEventListener("click", function (){
+            const currentTarget = this.parentElement.parentElement;
+            console.log(currentTarget);
+
+            const deletePopup = document.getElementById("popup-modal");
+            const closeDeletePopup = document.getElementById('close-popup');
+            const cancelDelete = document.getElementById('cancel-delete');
+            const confirmDelete = document.getElementById('confirm-delete');
+            
+            deletePopup.classList.remove('hidden');
+            
+            closeDeletePopup.onclick = function(){
+                deletePopup.classList.add('hidden');
             }
 
-            currentTarget.value = currentTarget.value>2 ? +currentTarget.value -1 : 1;
+            cancelDelete.onclick = function(){
+                deletePopup.classList.add('hidden');
+            }
 
-            const currentTargetPrice = currentTarget.parentElement.nextElementSibling;
-            currentTargetPrice.innerText = (currentTarget.value * product.price).toFixed(2) + " $";
-            
-            document.getElementById(`${product.id}`).innerText = currentTarget.value;
-            let variantIncPrice = document.getElementById(`total-${product.id}`);
-            variantIncPrice.innerText = (currentTarget.value * product.price).toFixed(2);
+            confirmDelete.onclick = function(){
+                currentTarget.remove();
+                deletePopup.classList.add('hidden');
+                document.getElementById("cout-products").innerText = document.getElementById("panier-products-container").childElementCount;
+            }
 
-            
-        
-            document.getElementById("total-price-panier").innerText = totalPanier.toFixed(2);
+            if(document.getElementById("panier-products-container").childElementCount == '0'){
+                document.getElementById('panier-message').classList.remove('hidden');
+            }
+
         })
 
     })  
 })
 
 
-const form = document.getElementById('form-devis');
 
 
 
-function validateForm(){
-    let valid = 1 ;
+// Fonction de Validation du Formulaire REGEX
+document.getElementById('download').addEventListener('click', function () {
 
-    const userName = form['name'].value.trim();
+    // Récupérer les Valeurs du Formulaire
+    const form = document.getElementById('form-devis');
+    const name = form['name'].value.trim();
+    const phone = form['phone'].value.trim();
+    const email = form['email'].value.trim();
+    const address = form['adress'].value.trim();
 
-    if(userName.length == 0){
-        document.getElementById('alert-name').innerText = "(Veuillez donner votre Nom !)";
-        valid = 0 ;
-    }
-    if(userName.length < 10){
-        document.getElementById('alert-name').innerText = "(Veuillez donner votre Nom Complet!)";
-        valid = 0 ;
-    }
-    
+    // Réinitialiser les Messages d'Alerte
+    document.getElementById('alert-name').innerText = "";
+    document.getElementById('alert-phone').innerText = "";
+    document.getElementById('alert-email').innerText = "";
+    document.getElementById('alert-address').innerText = "";
 
-    const userAdress = form['adress'].value.trim();
+    let isValid = true;
 
-    if(userAdress.length == 0){
-        document.getElementById('alert-name').innerText = "(Veuillez donner votre Adresse !)";
-        valid = 0 ;
-    }
-    if(userAdress.length < 20){
-        document.getElementById('alert-name').innerText = "(Veuillez donner votre Adress Complète !)";
-        valid = 0 ;
+    // Validation du Nom Complet
+    const nameValid = /^[A-Za-z]+(\s[A-Za-z]+)+$/;
+    if (!nameValid.test(name)) {
+        document.getElementById('alert-name').innerText = "Nom invalide";
+        isValid = false;
     }
 
-
-    const userEmail = form['email'].value;
-
-    if(!userEmail.contains('@')){
-        document.getElementById('alert-name').innerText = "(Votre Email doit contenir @ )";
-        valid = 0 ;
+    // Validation du Numéro de Téléphone
+    const phoneValid = /^\+212 6[0-9]{8}$/;
+    if (!phoneValid.test(phone)) {
+        document.getElementById('alert-phone').innerText = "N° de téléphone invalide";
+        isValid = false;
     }
-    if(!userEmail.contains('.com') || !userEmail.contains('.net') || !userEmail.contains('.org') || !userEmail.contains('@')){
-        document.getElementById('alert-name').innerText = "(Veuillez donner une extension de domaine valide comme .com !)";
-        valid = 0 ;
+
+    // Validation de l'Email
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailValid.test(email)) {
+        document.getElementById('alert-email').innerText = "Adresse email invalide";
+        isValid = false;
     }
-}
+
+    // Validation de l'Adresse
+    if (address.length < 10) {
+        document.getElementById('alert-address').innerText = "Adresse trop courte";
+        isValid = false;
+    }
+
+    if (isValid) {
+        console.log('Formulaire Validé !');
+    }
+});
 
 
 
+// Fonction de Récupération des Produits Intéréssants de l'API
 fetch(`http://localhost:3000/produits`)
 .then(res => res.json())
 .then(products => {
