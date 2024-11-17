@@ -5,22 +5,16 @@ const productDescription = document.getElementById("d-product-description");
 const productShortDescription = document.getElementById(
   "d-product-short_description"
 );
+
+const add_to_cart = document.getElementById("add-to-card_button");
 const productPrice = document.getElementById("new-price");
 const productBrand = document.getElementById("d-brand");
 const productStatus = document.getElementById("d-stock");
 const productQuantity = document.getElementById("d-quantite-input");
 const popularProducts = document.getElementById("d-popular-products");
 const totalPrice = document.getElementById("d-total-price");
-// let dataArray = [];
+var pQuantity = 1;
 
-//function to get url parameters
-// const productId = new URLSearchParams(window.location.search);
-// function getUrlParameter(id) {
-//   return productId.get(id);
-// }
-function show(id) {
-  console.log("id", id);
-}
 var full_url = document.URL;
 var stuff = full_url.split("?");
 var id = stuff[stuff.length - 1] - 1;
@@ -58,6 +52,7 @@ fetch("http://localhost:3000/produits")
         </div>
 
     </div>`;
+
         productName.innerHTML = data[id].name;
         productDescription.innerHTML = data[id].full_description;
         productShortDescription.innerHTML = data[id].short_description;
@@ -65,6 +60,11 @@ fetch("http://localhost:3000/produits")
         productStatus.innerHTML = data[id].stock;
         productPrice.innerHTML = data[id].price;
         totalPrice.innerHTML = data[id].price;
+
+        add_to_cart.setAttribute(
+          "onclick",
+          `ajouterAuPanier(${data[id].id},${pQuantity})`
+        );
       }
     }
 
@@ -77,7 +77,7 @@ fetch("http://localhost:3000/produits")
                     <img class="w-[100%]" src="${data[i].images[0]}" alt="product Image" style = "max-height : 200px">
                     <a href = "?${data[i].id}"><h4 id="product-name" class="text-[1rem] text-center font-semibold capitalize hover:text-blue-600">${data[i].name}</h4></a>
                     <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">${data[i].price}</span></h5>
-                    <button type="button" id="d-add-to-cart_btn" onclick = "show(${data[i].id}"
+                    <button type="button" id="d-add-to-cart_btn" onclick = "show(${data[i].id};ajouterAuPanier(${data[i].id},1)"
                         class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
                         Ajouter Au Panier
                     </button>
@@ -91,35 +91,72 @@ let switchImages = (currentImage) => {
   imageBox.src = currentImage.src;
 };
 
-//change product quantity function
+//change product total price an quantity function
+
+document.getElementById;
+
 productQuantity.value = 1;
+function incrementQuantity() {
+  if (productQuantity.value <= 0) {
+    productQuantity.value = 1;
+    document.getElementById("d-total-price").innerHTML = productPrice.innerHTML;
+  } else {
+    productQuantity.value++;
+    document.getElementById("d-total-price").innerHTML = (
+      productPrice.innerHTML * productQuantity.value
+    ).toFixed(2);
+    // pQuantity = productQuantity.value;
+  }
+  // console.log("pq", pQuantity);
+}
+// console.log("pq1", pQuantity);
 
-let changeQuantity = () => {
-  document.getElementById("increment-button").addEventListener("click", () => {
-    if (productQuantity.value <= 0) {
-      productQuantity.value = 1;
-      document.getElementById("d-total-price").innerHTML =
-        productPrice.innerHTML;
-    } else {
-      productQuantity.value++;
-      document.getElementById("d-total-price").innerHTML = (
-        productPrice.innerHTML * productQuantity.value
-      ).toFixed(2);
-    }
-  });
+function decrementQuantity() {
+  if (productQuantity.value <= 1) {
+    productQuantity.value = 1;
+    document.getElementById("d-total-price").innerHTML = productPrice.innerHTML;
+  } else {
+    productQuantity.value--;
+    document.getElementById("d-total-price").innerHTML = (
+      productPrice.innerHTML * productQuantity.value
+    ).toFixed(2);
+    // pQuantity = productQuantity.value;
+  }
+}
 
-  document.getElementById("decrement-button").addEventListener("click", () => {
-    if (productQuantity.value <= 1) {
-      productQuantity.value = 1;
-      document.getElementById("d-total-price").innerHTML =
-        productPrice.innerHTML;
-    } else {
-      productQuantity.value--;
-      document.getElementById("d-total-price").innerHTML = (
-        productPrice.innerHTML * productQuantity.value
-      ).toFixed(2);
-    }
-  });
-};
+// function changeQuantity() {
+//   pQuantity = productQuantity.value;
+//   document.getElementById("increment-button").addEventListener("click", () => {
+//     if (productQuantity.value <= 0) {
+//       productQuantity.value = 1;
+//       document.getElementById("d-total-price").innerHTML =
+//         productPrice.innerHTML;
+//     } else {
+//       productQuantity.value++;
+//       document.getElementById("d-total-price").innerHTML = (
+//         productPrice.innerHTML * productQuantity.value
+//       ).toFixed(2);
+//       pQuantity = productQuantity.value;
+//       console.log("pq", pQuantity);
+//     }
+//   });
 
-changeQuantity();
+//   document.getElementById("decrement-button").addEventListener("click", () => {
+//     if (productQuantity.value <= 1) {
+//       productQuantity.value = 1;
+//       document.getElementById("d-total-price").innerHTML =
+//         productPrice.innerHTML;
+//     } else {
+//       productQuantity.value--;
+//       document.getElementById("d-total-price").innerHTML = (
+//         productPrice.innerHTML * productQuantity.value
+//       ).toFixed(2);
+//       pQuantity = productQuantity.value;
+//       console.log("pq", pQuantity);
+//     }
+//   });
+
+//   console.log("pq", pQuantity);
+// }
+
+// changeQuantity();

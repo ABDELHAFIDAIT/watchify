@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <img class="w-[100%]" src="${response[i].images[0]}" alt="produit" style="height:200px;width:200px;object-fit : fill">
                         <a href="details.html?${response[i].id}"><h4 id="product-name" class="text-[1rem] text-center font-semibold capitalize hover:text-blue-600 cursor-pointer">${response[i].name}</h4></a>
                         <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">${response[i].price}</span></h5>
-                        <button type="button" id="d-add-to-cart_btn"
+                        <button type="button" onclick = "ajouterAuPanier(${response[i].id},1)"
                             class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
                             Ajouter Au Panier
                         </button>
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <img class="w-[100%]" src="${response[i].images[0]}" alt="produit" style="height:200px;width:200px;object-fit : fill">
                          <a href="details.html?${response[i].id}"><h4 id="product-name" class="text-[1rem] text-center font-semibold capitalize hover:text-blue-600 cursor-pointer">${response[i].name}</h4></a>
                         <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">${response[i].price}</span></h5>
-                        <button type="button" id="d-add-to-cart_btn"
+                        <button type="button" onclick = "ajouterAuPanier(${response[i].id},1)"
                             class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
                             Ajouter Au Panier
                         </button>

@@ -15,3 +15,43 @@ let closeMenu = () => {
 
 menu_icon.addEventListener("click", ToggleMenu);
 close_icon.addEventListener("click", closeMenu);
+
+//==========================================================
+
+// localStorage.setItem("prd");
+
+// var pCounter = localStorage.getItem("count")
+//   ? parseInt(localStorage.getItem("count"))
+//   : 0;
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   document.getElementById("Product-counter").innerText = pCounter;
+// });
+// //-------------------------------------------
+// function ajouterAuPanier(id, Quantity) {
+//   let product = localStorage.getItem("prd");
+
+//   if (!product || product === "") {
+//     product = `${id},${Quantity}`;
+//   } else {
+//     product += `-${id},${Quantity}`;
+//   }
+
+//   localStorage.setItem("prd", product);
+
+//   pCounter++;
+//   localStorage.setItem("count", pCounter); // Save updated counter to localStorage
+//   document.getElementById("Product-counter").innerText = pCounter;
+// }
+
+function ajouterAuPanier(id, quantity) {
+  let product = localStorage.getItem("prd");
+
+  if (!product || product === "") {
+    product = `${id},${quantity}`;
+  } else {
+    product += `-${id},${quantity}`;
+  }
+
+  localStorage.setItem("prd", product);
+}

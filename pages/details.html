@@ -92,11 +92,11 @@
 
                 <div class="flex gap-8 mb-5">
                     <div class="d-product-quantity flex gap-3">
-                        <button id="decrement-button" type="button"
+                        <button id="decrement-button" type="button" onclick="decrementQuantity()"
                             class="outline-none text-[1.5rem] hover:text-blue-600">-</button>
                         <input type="number" min="1" name="d-quantite" id="d-quantite-input"
                             class="bg-slate-100 rounded-md max-w-[100px] text-center">
-                        <button id="increment-button" type="button"
+                        <button id="increment-button" type="button" onclick="incrementQuantity()"
                             class="outline-none text-[1.5rem] hover:text-blue-600">+</button>
                     </div>
                     <div id="d-total-price" class="bg-slate-100 w-[100px] rounded-md flex items-center justify-center">
@@ -105,7 +105,7 @@
                 </div>
 
                 <div class="flex items-center gap-5 mb-5">
-                    <button type="button" id="d-add-to-cart_btn"
+                    <button type="button" id="add-to-card_button"
                         class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
                         Ajouter Au Panier
                     </button>
