@@ -5,15 +5,13 @@ const btnNext = document.getElementById("cata_btn_next");
 const btnPrev = document.getElementById("cata_btn_prev");
 const checkboxes = document.querySelectorAll('input[name="marque"]');
 let min = 0;
-let max = 8; 
+let max = 8;
 let AllProduit = [];
 
 let productsToShow = [];
 
-
 function deselectOtherCheckboxes(selectedCheckbox) {
-  
-      checkboxes.forEach(checkbox => {
+  checkboxes.forEach((checkbox) => {
     if (checkbox !== selectedCheckbox) {
       checkbox.checked = false;
     }
@@ -21,17 +19,17 @@ function deselectOtherCheckboxes(selectedCheckbox) {
 }
 
 // Fetch product data
-fetch('http://localhost:3000/produits')
-  .then(res => res.json())
-  .then(data => {
+fetch("http://localhost:3000/produits")
+  .then((res) => res.json())
+  .then((data) => {
     AllProduit.push(...data);
     displayProducts(min, max);
   })
-  .catch(err => console.error('Error fetching products:', err));
+  .catch((err) => console.error("Error fetching products:", err));
 
 // Function to display products based on the range
 function displayProducts(min, max) {
-  productContainer.innerHTML = ''; // Clear the current products before appending new ones
+  productContainer.innerHTML = ""; // Clear the current products before appending new ones
 
   productsToShow = AllProduit.slice(min, max);
 
@@ -49,7 +47,6 @@ function displayProducts(min, max) {
      
     `;
     productContainer.appendChild(productCard);
-  
   });
 }
 
@@ -107,10 +104,10 @@ function updateCarousel() {
 const intervalId = setInterval(updateCarousel, 1000);
 function resetCarousel() {
   clearInterval(intervalId);
-  setInterval(updateCarousel, 1000); 
+  setInterval(updateCarousel, 1000);
 }
 
-const btnSort=document.getElementById("sort")
+const btnSort = document.getElementById("sort");
 btnSort.addEventListener("click", () => {
 switch(btnSort.value){
   case "price":
@@ -153,4 +150,3 @@ filteredProducts.forEach(product => {
   alert(product)
   console.log(`Produit : ${product.name}, Marque : ${product.marque}, Prix : ${product.price}`);
 });
-

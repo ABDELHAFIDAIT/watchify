@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../assets/css/output.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +14,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <title>Watchify</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Watchify - details</title>
 </head>
 
 <body>
@@ -74,47 +75,31 @@
         <!--Product details-->
         <main class="flex gap-10 justify-center py-10" id="d-product-details" style="width: 100% ;margin-top: 100px">
             <section class="flex-col" id="d-product-galerie" style="width: 100%;">
-                <div class="mb-5 flex justify-center" id="d-image-container">
-                    <img src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt=""
-                        style="width: 100%; max-width: 450px;">
-                </div>
-                <div class="flex gap-2 justify-center" id="d-image-variants">
-                    <div
-                        class="d-variant bg-blue-600 rounded-md p-2 cursor-pointer max-w-[100px] max-h-[109px] my-auto">
-                        <img src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="">
-                    </div>
-                    <div
-                        class="d-variant bg-blue-600 rounded-md p-2 cursor-pointer max-w-[100px] max-h-[109px] my-auto">
-                        <img src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="">
-                    </div>
-                    <div
-                        class="d-variant bg-blue-600 rounded-md p-2 cursor-pointer max-w-[100px] max-h-[109px] my-auto">
-                        <img src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="">
-                    </div>
 
-                </div>
             </section>
 
             <section class="w-[100%]" id="product-informations">
                 <h2 id="d-product-name" class="text-[2rem] font-semibold capitalize mb-2">Fitbit-sense-2-frandroid</h2>
-                <p id="d-product-short_descieption" class="text-[1rem] font-normal mb-3" style="max-width:500px">
+                <p id="d-product-short_description" class="text-[1rem] font-normal mb-3" style="max-width:500px">
                     Google Fitbit Sense 2 Montre connectée sport et santé avec GPS intégré, fonctionnalités avancées
                     pour la
                     santé, jusqu’à 6 jours d’autonomie de batterie - compatible avec iOS 15 & Android OS 9.0
                 </p>
                 <div class="d-product-prices flex gap-6 mb-5">
                     <p class="font-semibold line-through">$<span id="old-price">125.00</span></p>
-                    <p class="font-semibold"><span id="new-price">$115.00</span></p>
+                    <p class="font-semibold">$<span id="new-price">115.00</span></p>
                 </div>
 
                 <div class="flex gap-8 mb-5">
                     <div class="d-product-quantity flex gap-3">
-                        <button type="button" class="outline-none text-[1.5rem] hover:text-blue-600">-</button>
-                        <input type="number" name="d-quantite" id="d-quantite-input"
+                        <button id="decrement-button" type="button"
+                            class="outline-none text-[1.5rem] hover:text-blue-600">-</button>
+                        <input type="number" min="1" name="d-quantite" id="d-quantite-input"
                             class="bg-slate-100 rounded-md max-w-[100px] text-center">
-                        <button type="button" class="outline-none text-[1.5rem] hover:text-blue-600">+</button>
+                        <button id="increment-button" type="button"
+                            class="outline-none text-[1.5rem] hover:text-blue-600">+</button>
                     </div>
-                    <div id="d-total-pric" class="bg-slate-100 w-[100px] rounded-md flex items-center justify-center">
+                    <div id="d-total-price" class="bg-slate-100 w-[100px] rounded-md flex items-center justify-center">
                         <p class="px-2">$<span>212</span></p>
                     </div>
                 </div>
@@ -170,7 +155,7 @@
         </main>
         <section class="bg-stone-100 py-3 px-5 rounded-md drop-shadow-sm mb-10">
             <h2 class="text-[1.5rem] font-semibold mb-4">Description</h2>
-            <p class="text-sm font-light">
+            <p class="text-sm font-light" id="d-product-description">
                 Votre assistant personnel
                 Bienvenue dans la prochaine génération d’assistance avec notre Future Helper Robot. Conçu avec une
                 intelligence artificielle de pointe, ce compagnon robotique sert d'assistant personnel, s'intégrant
@@ -201,34 +186,8 @@
                 Les Produits Populaire
             </h2>
 
-            <div class="flex gap-5 flex-wrap justify-center py-5">
-                <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
-                    <img class="w-[100%]" src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="produit">
-                    <h4 id="product-name" class="text-[1rem] font-semibold capitalize">Huawei Fit A2 Active</h4>
-                    <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">122</span></h5>
-                    <button type="button" id="d-add-to-cart_btn"
-                        class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
-                        Ajouter Au Panier
-                    </button>
-                </div>
-                <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
-                    <img class="w-[100%]" src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="produit">
-                    <h4 id="product-name" class="text-[1rem] font-semibold capitalize">Huawei Fit A2 Active</h4>
-                    <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">122</span></h5>
-                    <button type="button" id="d-add-to-cart_btn"
-                        class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
-                        Ajouter Au Panier
-                    </button>
-                </div>
-                <div class="flex flex-col items-center max-w-[250px] p-5 bg-slate-100 rounded-md gap-2">
-                    <img class="w-[100%]" src="../assets/img/fitbit-sense-2-frandroid-2022-768x768.png" alt="produit">
-                    <h4 id="product-name" class="text-[1rem] font-semibold capitalize">Huawei Fit A2 Active</h4>
-                    <h5 class="text-[0.9rem] font-semibold">$<span id="d-product-price">122</span></h5>
-                    <button type="button" id="d-add-to-cart_btn"
-                        class="bg-blue-600 px-4 py-1 text-white rounded-md text-center hover:bg-[#183876] transition-colors ease-in-out">
-                        Ajouter Au Panier
-                    </button>
-                </div>
+            <div class="flex gap-5 flex-wrap justify-center py-5" id="d-popular-products">
+
             </div>
         </section>
     </main>
@@ -299,6 +258,8 @@
         <span class="font-thin text-sm text-stone-500 mt-10">Copyright Rimel 2022. All right reserved</span>
     </footer>
 
+
+    <script src="../assets/js/details.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../tailwind.config.js"></script>
 </body>
