@@ -57,7 +57,9 @@ function displayProducts(min, max) {
         </p>
         <p class="text-blue-600 font-bold h-[30px]">${product.price}</p>
         <div class="mt-auto">
-          <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+          <button onclick = "ajouterAuPanier(${
+            product.id
+          },1)" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
         </div>
      
     `;
@@ -176,7 +178,9 @@ function filtrerparmarque(Chekvalue) {
         </p>
         <p class="text-blue-600 font-bold h-[30px]">${product.price}</p>
         <div class="mt-auto">
-          <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+          <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700" onclick = "ajouterAuPanier(${
+            product.id
+          },1)>Ajouter au panier</button>
         </div>
      
     `;
@@ -185,7 +189,7 @@ function filtrerparmarque(Chekvalue) {
 }
 
 ////////////////////////////////////////////////////////////////recherche////////////////////////////////
-const rechercheBtn = document.getElementById("recherche-btn");
+const rechercheBtn = document.getElementById("cata_recherche");
 rechercheBtn.addEventListener("click", searchProduct);
 
 function searchProduct() {
@@ -220,7 +224,9 @@ function searchProduct() {
         </p>
         <p class="text-blue-600 font-bold h-[30px]">${product.price}</p>
         <div class="mt-auto">
-          <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+          <button onclick = "ajouterAuPanier(${
+            product.id
+          },1)" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
         </div>
      
     `;
