@@ -44,6 +44,7 @@ close_icon.addEventListener("click", closeMenu);
 //   document.getElementById("Product-counter").innerText = pCounter;
 // }
 
+const popup = document.getElementById("popUp");
 function ajouterAuPanier(id, quantity) {
   let product = localStorage.getItem("prd");
 
@@ -54,5 +55,5 @@ function ajouterAuPanier(id, quantity) {
   }
 
   localStorage.setItem("prd", product);
+  popup.classList.remove("hidden");
 }
-
