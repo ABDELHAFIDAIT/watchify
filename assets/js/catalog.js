@@ -10,7 +10,9 @@ let AllProduit = [];
 
 let productsToShow = [];
 
-function deselectOtherCheckboxes(selectedCheckbox) {
+
+//
+function inselectBox(selectedCheckbox) {
   checkboxes.forEach((checkbox) => {
     if (checkbox !== selectedCheckbox) {
       checkbox.checked = false;
@@ -19,15 +21,15 @@ function deselectOtherCheckboxes(selectedCheckbox) {
 }
 
 // Fetch product data
-fetch("https://product-api-yucm.onrender.com/api/products")
+fetch("http://localhost:3000/produits")
   .then((res) => res.json())
   .then((data) => {
     AllProduit.push(...data);
     displayProducts(min, max);
   })
   .catch((err) => console.error("Error fetching products:", err));
-
-function displayProducts(min, max) {
+//affichage des produits
+  function displayProducts(min, max) {
   productContainer.innerHTML = ""; 
 
   productsToShow = AllProduit.slice(min, max);
@@ -38,7 +40,9 @@ function displayProducts(min, max) {
     productCard.innerHTML = `
         <a href="details.html?${product.id}" class=" hover:shodow-blue-600"><img src="${product.images[0]}" alt="${product.name}" class="w-full h-40 object-contain rounded-md mb-2"></a>
         <a href="details.html?${product.id}"><h3 class=" hover:text-blue-600 text-sm font-semibold text-gray-800 h-9 overflow-hidden">${product.name}</h3></a>
-        <p class="text-gray-600 text-xs h-fit overflow-hidden flex-grow">${product.short_description}</p>
+        
+        <p class="text-gray-600 text-xs h-fit overflow-hidden flex-grow">${product.short_description.substring(0, 40) + "..."}
+        </p>
         <p class="text-blue-600 font-bold h-[30px]">${product.price}</p>
         <div class="mt-auto">
           <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
@@ -48,8 +52,8 @@ function displayProducts(min, max) {
     productContainer.appendChild(productCard);
   });
 }
-
-// "Next" button event listener
+///////////////////////////////////////////////////////////////pagination////////////////////////////////
+// "button suivant" 
 btnNext.addEventListener("click", () => {
   if (max < AllProduit.length) {
     min += 8;
@@ -58,7 +62,7 @@ btnNext.addEventListener("click", () => {
   }
 });
 
-// "Prev" button event listener
+// "button Prev"
 btnPrev.addEventListener("click", () => {
   if (min > 0) {
     min -= 8;
@@ -81,6 +85,8 @@ document.getElementById('btn_next4').addEventListener('click', () => {
     Pas de produit à afficher
   </p>`;
 })
+///////////////////////////////////////////////////////////////pagination////////////////////////////////
+
 
 // Carousel function
 let count = 0;
@@ -97,7 +103,6 @@ function updateCarousel() {
       count = 0;
     }
   }
-  
 }
 
 const intervalId = setInterval(updateCarousel, 1000);
@@ -106,6 +111,8 @@ function resetCarousel() {
   setInterval(updateCarousel, 1000);
 }
 
+
+//trier
 const btnSort = document.getElementById("sort");
 btnSort.addEventListener("click", () => {
 switch(btnSort.value){
@@ -126,26 +133,47 @@ switch(btnSort.value){
 }
 });
 
-// checkboxes.forEach(checkbox => {
-//   checkbox.addEventListener('change', () => {
-//       const selectedBrands = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
-//       filterProductsByBrand(selectedBrands);
-//   });
+///////////////////////////////////////////////////////////////Filtrage////////////////////////////////
+
+// function filterProductsByBrand(products, brandName) {
+//   return products.filter(product => product.marque.toLowerCase() === brandName.toLowerCase());
+// }
+
+// const brandName = "Samsung";
+// const filteredProducts = filterProductsByBrand(AllProduit, brandName);
+
+// filteredProducts.forEach(product => {
+//   alert(product)
+//   console.log(`Produit : ${product.name}, Marque : ${product.marque}, Prix : ${product.price}`);
 // });
 
-// function filterProductsByBrand(brands) {
-//   const filteredProducts = AllProduit.filter(product => brands.includes(product.marque));
-//   displayProducts(0, 8, filteredProducts);
-// }
-function filterProductsByBrand(products, brandName) {
-  return products.filter(product => product.marque.toLowerCase() === brandName.toLowerCase());
+function filtrerparmarque(Chekvalue) {
+console.log(Chekvalue.value)
+let temData=AllProduit.filter(product => product.marque === Chekvalue.value);
+displayProducts
+
+  productContainer.innerHTML = ""; 
+
+
+  temData.forEach((product) => {
+    const productCard = document.createElement("div");
+    productCard.className="product-card p-4 rounded-md text-center transform transition-all duration-300 shadow-md hover:shadow-blue-600";
+    productCard.innerHTML = `
+        <a href="details.html?${product.id}" class=" hover:shodow-blue-600"><img src="${product.images[0]}" alt="${product.name}" class="w-full h-40 object-contain rounded-md mb-2"></a>
+        <a href="details.html?${product.id}"><h3 class=" hover:text-blue-600 text-sm font-semibold text-gray-800 h-9 overflow-hidden">${product.name}</h3></a>
+        
+        <p class="text-gray-600 text-xs h-fit overflow-hidden flex-grow">${product.short_description.substring(0, 40) + "..."}
+        </p>
+        <p class="text-blue-600 font-bold h-[30px]">${product.price}</p>
+        <div class="mt-auto">
+          <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+        </div>
+     
+    `;
+    productContainer.appendChild(productCard);
+  });
+
+
+
+
 }
-
-const brandName = "Samsung";
-const filteredProducts = filterProductsByBrand(AllProduit, brandName);
-
-// Affichage des produits filtrés
-filteredProducts.forEach(product => {
-  alert(product)
-  console.log(`Produit : ${product.name}, Marque : ${product.marque}, Prix : ${product.price}`);
-});

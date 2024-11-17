@@ -144,16 +144,16 @@
     <div class="p-4 rounded-md shadow-lg w-1/5 hidden md:block space-y-4">
       <h3 class="text-lg mb-3">Filtrer par :</h3>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="samsung" value="Samsung" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="filterByBrand()">
+        <input type="checkbox" id="samsung" value="Apple" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="samsung" class="flex items-center space-x-2">
           <img src="../assets/img/apple.png" alt="Samsung" class="w-6 h-6">
           <span class="text-gray-700">Apple</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="samsung" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="samsung" value="Samsung" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="samsung" class="flex items-center space-x-2">
           <img src="../assets/img/samsung.png" alt="Samsung" class="w-6 h-6">
           <span class="text-gray-700">Samsung</span>
@@ -161,8 +161,8 @@
       </div>
 
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="apple" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="apple" value="Garmin" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="apple" class="flex items-center space-x-2">
           <img src="../assets/img/direction.png" alt="Apple" class="w-6 h-6">
           <span class="text-gray-700">Garmin</span>
@@ -170,64 +170,64 @@
       </div>
 
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="Fitbit" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/direction.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">Fitbit</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="Huawei" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">Huawei</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="Amazfit" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">Amazfit</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="Fossil" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">Fossil</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="Xiaomi" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/xiaomi.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">Xiaomi</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="Oppo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">Oppo</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="TicWatch" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/xiaomi.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">TicWatch</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="Withings" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">Withings</span>
