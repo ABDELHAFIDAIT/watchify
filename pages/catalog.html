@@ -16,39 +16,45 @@
 
 <body class="w-full">
   <!-- Header -->
-  <Header class="flex items-center justify-between py-3 px-5 my-4 mx-auto rounded-md bg-white drop-shadow-md w-[100%]"
-    style="max-width: 1000px; position: fixed;top: 0;left: 50%; transform: translate(-50%); z-index:99;">
-    <div class="logo w-[70px] h-[50px]">
-      <img class="w-[100%] h-[100%]" src="../assets/img/watchify-white-logo.png" alt="watchify">
-    </div>
-    <form action="/" class="bg-slate-100 rounded-md py-1 pr-3 flex items-center justify-between w-[30%] drop-shadow-sm">
+ 
+  <Header
+  class="flex items-center justify-between py-3 px-5 my-4 mx-auto rounded-md bg-white drop-shadow-md w-[100%]"
+  style="max-width: 1000px; position: fixed;top: 0;left: 50%; transform: translate(-50%); z-index:99;">
+  <div class="logo w-[70px] h-[50px]">
+      <img class="w-[100%] h-[100%]" src="../assets/img/watchify.png" alt="watchify">
+  </div>
+  <form action="/"
+      class="bg-slate-100 rounded-md py-1 pr-3 flex items-center justify-between w-[30%] drop-shadow-sm">
       <input type="search"
-        class="bg-transparent w-[90%] h-[25px] rounded-md pl-3 py-0.5 outline-none text-xs placeholder:text-xs"
-        placeholder="Recherche..">
+          class="bg-transparent w-[90%] h-[25px] rounded-md pl-3 py-0.5 outline-none text-xs placeholder:text-xs"
+          placeholder="Recherche..">
       <i class="fa fa-search cursor-pointer"></i>
-    </form>
-    <nav>
+  </form>
+  <nav>
       <ul class="flex items-center" id="nav-menu">
-        <li class="link mr-5"><a
-            class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
-            href="index.html">Accueil</a></li>
-        <li class="link mr-5"><a
-            class="text-sm text-blue-600 tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
-            href="catlogue.html">Catalogue</a></li>
-        <li class="link mr-7"><a
-            class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
-            href="Apropos.html">A Propos</a></li>
+          <li class="link mr-5"><a
+                  class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
+                  href="index.html">Accueil</a></li>
+          <li class="link mr-5"><a
+                  class="text-sm tracking-wide font-normal text-blue-700 hover:text-blue-600 transition-colors ease-in-out"
+                  href="catalog.html">Catalogue</a></li>
+          <li class="link mr-7"><a
+                  class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
+                  href="about.html">Apropos</a></li>
       </ul>
-    </nav>
-    <div class="link bg-slate-100 p-1 rounded-md drop-shadow-sm"><a href="panier.html"><i
-          class="fa-solid fa-bag-shopping text-lg hover:text-blue-600 transition-colors" id="shop-bag"></i></a>
+  </nav>
+  <div class="link bg-slate-100 p-1 rounded-md drop-shadow-sm"><a href="panier.html"><i
+              class="fa-solid fa-bag-shopping text-lg hover:text-blue-600 transition-colors"
+              id="shop-bag"></i></a>
       <span id="Product-counter" class="text-xs text-blue-600">0</span>
-    </div>
+  </div>
 
-    <img id="menu-icon" class="cursor-pointer" src="../assets/img/menu.png" alt="menu" style="width:25px;">
-    <img id="close-menu_icon" class="cursor-pointer" src="../assets/img/fermer.png" alt="closemenu" style="width:25px;">
+  <img id="menu-icon" class="cursor-pointer" src="../assets/img/menu.png" alt="menu" style="width:25px;">
+  <img id="close-menu_icon" class="cursor-pointer" src="../assets/img/fermer.png" alt="closemenu"
+      style="width:25px;">
 
-  </Header>
+
+</Header>
 
   <section class="mt-[150px]">
     <div class="w-full flex flex-col align-middle text-center my-8">
@@ -118,7 +124,7 @@
         <div class="flex items-center space-x-2">
           <label for="sort" class="text-gray-700 font-semibold">Trier par :</label>
           <select id="sort" class="px-4 py-2 rounded-md text-gray-700">
-            <option>----</option>
+            <option value="all">----</option>
             <option value="price">Prix</option>
             <option value="stock">Quantité</option>
           </select>
@@ -233,7 +239,7 @@
   </section>
 
   <!-- Pagination -->
-  <section class="w-full flex justify-center lg:justify-end">
+  <section class="w-full flex justify-center lg:justify-end mb-12 mt-2">
     <div class="flex justify-center mt-8 lg:w-4/5 md:w-[100%] sm:w-[100%]">
       <nav class="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
         <!-- Previous Button -->
@@ -243,24 +249,25 @@
         </button>
 
         <!-- Page Numbers -->
-        <a href="#" aria-current="page"
+        <button id="btn_next1"
           class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
           1
-        </a>
-        <a href="#"
+        </button>
+        <button id="btn_next2"
           class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
           2
-        </a>
+        </button>
 
+        <button id="btn_next3"
+          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+          3
+        </button>
+        <button id="btn_next4"
+          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+          4
+        </button>
         <span class="px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-500">...</span>
-        <a href="#"
-          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
-          8
-        </a>
-        <a href="#"
-          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
-          9
-        </a>
+
 
         <!-- Next Button -->
         <button id="cata_btn_next"
@@ -271,8 +278,8 @@
     </div>
 
   </section>
-
   <!-- fin du pagination  -->
+
   <section class="bg-blue-950 py-10 px-10">
     <div class="text-white flex md:justify-between justify-center items-center flex-wrap gap-5">
       <div>
@@ -288,7 +295,8 @@
   </section>
 
 
-  <!----Footer----->
+
+
   <!----Footer----->
   <footer class="flex flex-col bg-black items-center py-8 md:px-20 px-10 ">
     <div class="flex justify-between flex-wrap gap-x-2 gap-y-5 text-white w-full">
@@ -304,7 +312,7 @@
       <div>
         <h4 class="font-semibold mb-2">Account</h4>
         <ul>
-          <li class="font-thin mb-1.5"><a href="#">My Account</a></li>
+          <li class="font-thin mb-1.5"><button="#">My Account</button=></li>
           <li class="font-thin mb-1.5"><a href="#">Login / Register</a></li>
           <li class="font-thin mb-1.5"><a href="#">Cart</a></li>
           <li class="font-thin mb-1.5"><a href="#">Wishlist</a></li>
