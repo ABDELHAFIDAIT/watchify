@@ -19,7 +19,7 @@ function deselectOtherCheckboxes(selectedCheckbox) {
 }
 
 // Fetch product data
-fetch("http://localhost:3000/produits")
+fetch("https://product-api-yucm.onrender.com/api/products")
   .then((res) => res.json())
   .then((data) => {
     AllProduit.push(...data);
@@ -27,18 +27,17 @@ fetch("http://localhost:3000/produits")
   })
   .catch((err) => console.error("Error fetching products:", err));
 
-// Function to display products based on the range
 function displayProducts(min, max) {
-  productContainer.innerHTML = ""; // Clear the current products before appending new ones
+  productContainer.innerHTML = ""; 
 
   productsToShow = AllProduit.slice(min, max);
 
   productsToShow.forEach((product) => {
     const productCard = document.createElement("div");
-    productCard.className="product-card p-4 rounded-md text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl";
+    productCard.className="product-card p-4 rounded-md text-center transform transition-all duration-300 shadow-md hover:shadow-blue-600";
     productCard.innerHTML = `
-        <a href="details.html?${product.id}"><img src="${product.images[0]}" alt="${product.name}" class="w-full h-40 object-contain rounded-md mb-2"></a>
-        <a href="details.html?${product.id}"><h3 class="text-sm font-semibold text-gray-800 h-9 overflow-hidden">${product.name}</h3></a>
+        <a href="details.html?${product.id}" class=" hover:shodow-blue-600"><img src="${product.images[0]}" alt="${product.name}" class="w-full h-40 object-contain rounded-md mb-2"></a>
+        <a href="details.html?${product.id}"><h3 class=" hover:text-blue-600 text-sm font-semibold text-gray-800 h-9 overflow-hidden">${product.name}</h3></a>
         <p class="text-gray-600 text-xs h-fit overflow-hidden flex-grow">${product.short_description}</p>
         <p class="text-blue-600 font-bold h-[30px]">${product.price}</p>
         <div class="mt-auto">
