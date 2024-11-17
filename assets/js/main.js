@@ -55,3 +55,4 @@ function ajouterAuPanier(id, quantity) {
 
   localStorage.setItem("prd", product);
 }
+

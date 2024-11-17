@@ -185,7 +185,7 @@ function filtrerparmarque(Chekvalue) {
 }
 
 ////////////////////////////////////////////////////////////////recherche////////////////////////////////
-const rechercheBtn = document.getElementById("cata_recherche");
+const rechercheBtn = document.getElementById("recherche-btn");
 rechercheBtn.addEventListener("click", searchProduct);
 
 function searchProduct() {
