@@ -135,26 +135,11 @@ switch(btnSort.value){
 
 ///////////////////////////////////////////////////////////////Filtrage////////////////////////////////
 
-// function filterProductsByBrand(products, brandName) {
-//   return products.filter(product => product.marque.toLowerCase() === brandName.toLowerCase());
-// }
-
-// const brandName = "Samsung";
-// const filteredProducts = filterProductsByBrand(AllProduit, brandName);
-
-// filteredProducts.forEach(product => {
-//   alert(product)
-//   console.log(`Produit : ${product.name}, Marque : ${product.marque}, Prix : ${product.price}`);
-// });
-
 function filtrerparmarque(Chekvalue) {
 console.log(Chekvalue.value)
 let temData=AllProduit.filter(product => product.marque === Chekvalue.value);
-displayProducts
 
   productContainer.innerHTML = ""; 
-
-
   temData.forEach((product) => {
     const productCard = document.createElement("div");
     productCard.className="product-card p-4 rounded-md text-center transform transition-all duration-300 shadow-md hover:shadow-blue-600";
@@ -172,8 +157,36 @@ displayProducts
     `;
     productContainer.appendChild(productCard);
   });
-
-
-
-
 }
+
+
+////////////////////////////////////////////////////////////////recherche////////////////////////////////
+const rechercheBtn = document.getElementById("cata_recherche");
+rechercheBtn.addEventListener("click", searchProduct)
+
+function searchProduct() {
+
+  const rechercheInput = document.getElementById("recherchZone");
+  const recherche_value = rechercheInput.value;
+  let searchResult = AllProduit.filter((product) =>product.name.includes(recherche_value));
+  productContainer.innerHTML = ""; 
+
+  searchResult.forEach((product) => {
+    const productCard = document.createElement("div");
+    productCard.className="product-card p-4 rounded-md text-center transform transition-all duration-300 shadow-md hover:shadow-blue-600";
+    productCard.innerHTML = `
+        <a href="details.html?${product.id}" class=" hover:shodow-blue-600"><img src="${product.images[0]}" alt="${product.name}" class="w-full h-40 object-contain rounded-md mb-2"></a>
+        <a href="details.html?${product.id}"><h3 class=" hover:text-blue-600 text-sm font-semibold text-gray-800 h-9 overflow-hidden">${product.name}</h3></a>
+        
+        <p class="text-gray-600 text-xs h-fit overflow-hidden flex-grow">${product.short_description.substring(0, 40) + "..."}
+        </p>
+        <p class="text-blue-600 font-bold h-[30px]">${product.price}</p>
+        <div class="mt-auto">
+          <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+        </div>
+     
+    `;
+    productContainer.appendChild(productCard);
+  });
+}
+
