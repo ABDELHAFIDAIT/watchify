@@ -151,7 +151,7 @@ let temData=AllProduit.filter(product => product.marque === Chekvalue.value);
         </p>
         <p class="text-blue-600 font-bold h-[30px]">${product.price}</p>
         <div class="mt-auto">
-          <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+          <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700" onclick = "ajouterAuPanier(${product.id},1)>Ajouter au panier</button>
         </div>
      
     `;
