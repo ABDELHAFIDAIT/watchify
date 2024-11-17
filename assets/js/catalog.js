@@ -10,7 +10,8 @@ let AllProduit = [];
 
 let productsToShow = [];
 
-function deselectOtherCheckboxes(selectedCheckbox) {
+//
+function inselectBox(selectedCheckbox) {
   checkboxes.forEach((checkbox) => {
     if (checkbox !== selectedCheckbox) {
       checkbox.checked = false;
@@ -26,47 +27,45 @@ fetch("http://localhost:3000/produits")
     displayProducts(min, max);
   })
   .catch((err) => console.error("Error fetching products:", err));
-
-// Function to display products based on the range
+//affichage des produits
 function displayProducts(min, max) {
-  productContainer.innerHTML = ""; // Clear the current products before appending new ones
+  productContainer.innerHTML = "";
 
   productsToShow = AllProduit.slice(min, max);
 
   productsToShow.forEach((product) => {
     const productCard = document.createElement("div");
-    productCard.classList.add(
-      "product-card",
-      "max-w-[250px]",
-      "min-w-[200px]",
-      "p-5",
-      "shadow-md",
-      "rounded-md",
-      "text-center",
-      "hover:shadow-blue-600",
-      "flex",
-      "flex-col",
-      "gap-2",
-      "justify-between",
-      "mx-auto"
-    );
-
+    productCard.className =
+      "product-card p-4 rounded-md text-center transform transition-all duration-300 shadow-md hover:shadow-blue-600";
     productCard.innerHTML = `
-      
-        <img src="${product.images[0]}" alt="${product.name}" class="w-full h-40 object-contain rounded-md mb-2">
-        <a href="details.html?${product.id}"><h3 class="text-sm font-semibold text-gray-800 h-9 overflow-hidden hover:text-blue-600">${product.name}</h3></a>
-        <p class="text-gray-600 text-xs h-fit overflow-hidden flex-grow">${product.short_description}</p>
+        <a href="details.html?${
+          product.id
+        }" class=" hover:shodow-blue-600"><img src="${
+      product.images[0]
+    }" alt="${
+      product.name
+    }" class="w-full h-40 object-contain rounded-md mb-2"></a>
+        <a href="details.html?${
+          product.id
+        }"><h3 class=" hover:text-blue-600 text-sm font-semibold text-gray-800 h-9 overflow-hidden">${
+      product.name
+    }</h3></a>
+        
+        <p class="text-gray-600 text-xs h-fit overflow-hidden flex-grow">${
+          product.short_description.substring(0, 40) + "..."
+        }
+        </p>
         <p class="text-blue-600 font-bold h-[30px]">${product.price}</p>
         <div class="mt-auto">
-          <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700" onclick = "ajouterAuPanier(${product.id},1)">Ajouter au panier</button>
+          <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
         </div>
      
     `;
     productContainer.appendChild(productCard);
   });
 }
-
-// "Next" button event listener
+///////////////////////////////////////////////////////////////pagination////////////////////////////////
+// "button suivant"
 btnNext.addEventListener("click", () => {
   if (max < AllProduit.length) {
     min += 8;
@@ -75,7 +74,7 @@ btnNext.addEventListener("click", () => {
   }
 });
 
-// "Prev" button event listener
+// "button Prev"
 btnPrev.addEventListener("click", () => {
   if (min > 0) {
     min -= 8;
@@ -84,7 +83,23 @@ btnPrev.addEventListener("click", () => {
   }
 });
 
-// Carousel functionality
+document.getElementById("btn_next1").addEventListener("click", () => {
+  displayProducts(0, 8);
+});
+document.getElementById("btn_next2").addEventListener("click", () => {
+  displayProducts(8, 16);
+});
+document.getElementById("btn_next3").addEventListener("click", () => {
+  displayProducts(16, 20);
+});
+document.getElementById("btn_next4").addEventListener("click", () => {
+  productContainer.innerHTML = ` <p class="text-4xl col-span-4 font-semibold text-blue-600 p-6 bg-white shadow-lg rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+    Pas de produit à afficher
+  </p>`;
+});
+///////////////////////////////////////////////////////////////pagination////////////////////////////////
+
+// Carousel function
 let count = 0;
 let cata_price_caroussele = document.getElementById("paragrapher_prix");
 let cata_image_caroussele = document.getElementById("cata_image_caroussel");
@@ -102,12 +117,12 @@ function updateCarousel() {
 }
 
 const intervalId = setInterval(updateCarousel, 1000);
-
 function resetCarousel() {
   clearInterval(intervalId);
   setInterval(updateCarousel, 1000);
 }
 
+//trier
 const btnSort = document.getElementById("sort");
 btnSort.addEventListener("click", () => {
   switch (btnSort.value) {
@@ -121,7 +136,94 @@ btnSort.addEventListener("click", () => {
       console.log("Sort stock");
       break;
     default:
+    case "all":
+      AllProduit = [...data];
       displayProducts(min, max);
       break;
   }
 });
+
+///////////////////////////////////////////////////////////////Filtrage////////////////////////////////
+
+function filtrerparmarque(Chekvalue) {
+  console.log(Chekvalue.value);
+  let temData = AllProduit.filter(
+    (product) => product.marque === Chekvalue.value
+  );
+
+  productContainer.innerHTML = "";
+  temData.forEach((product) => {
+    const productCard = document.createElement("div");
+    productCard.className =
+      "product-card p-4 rounded-md text-center transform transition-all duration-300 shadow-md hover:shadow-blue-600";
+    productCard.innerHTML = `
+        <a href="details.html?${
+          product.id
+        }" class=" hover:shodow-blue-600"><img src="${
+      product.images[0]
+    }" alt="${
+      product.name
+    }" class="w-full h-40 object-contain rounded-md mb-2"></a>
+        <a href="details.html?${
+          product.id
+        }"><h3 class=" hover:text-blue-600 text-sm font-semibold text-gray-800 h-9 overflow-hidden">${
+      product.name
+    }</h3></a>
+        
+        <p class="text-gray-600 text-xs h-fit overflow-hidden flex-grow">${
+          product.short_description.substring(0, 40) + "..."
+        }
+        </p>
+        <p class="text-blue-600 font-bold h-[30px]">${product.price}</p>
+        <div class="mt-auto">
+          <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+        </div>
+     
+    `;
+    productContainer.appendChild(productCard);
+  });
+}
+
+////////////////////////////////////////////////////////////////recherche////////////////////////////////
+const rechercheBtn = document.getElementById("cata_recherche");
+rechercheBtn.addEventListener("click", searchProduct);
+
+function searchProduct() {
+  const rechercheInput = document.getElementById("recherchZone");
+  const recherche_value = rechercheInput.value;
+  let searchResult = AllProduit.filter((product) =>
+    product.name.includes(recherche_value)
+  );
+  productContainer.innerHTML = "";
+
+  searchResult.forEach((product) => {
+    const productCard = document.createElement("div");
+    productCard.className =
+      "product-card p-4 rounded-md text-center transform transition-all duration-300 shadow-md hover:shadow-blue-600";
+    productCard.innerHTML = `
+        <a href="details.html?${
+          product.id
+        }" class=" hover:shodow-blue-600"><img src="${
+      product.images[0]
+    }" alt="${
+      product.name
+    }" class="w-full h-40 object-contain rounded-md mb-2"></a>
+        <a href="details.html?${
+          product.id
+        }"><h3 class=" hover:text-blue-600 text-sm font-semibold text-gray-800 h-9 overflow-hidden">${
+      product.name
+    }</h3></a>
+        
+        <p class="text-gray-600 text-xs h-fit overflow-hidden flex-grow">${
+          product.short_description.substring(0, 40) + "..."
+        }
+        </p>
+        <p class="text-blue-600 font-bold h-[30px]">${product.price}</p>
+        <div class="mt-auto">
+          <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Ajouter au panier</button>
+        </div>
+     
+    `;
+    productContainer.appendChild(productCard);
+  });
+}

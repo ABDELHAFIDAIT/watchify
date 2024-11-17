@@ -20,17 +20,19 @@
 </head>
 
 <body class="w-full">
+
   <!-- Header -->
+
   <Header class="flex items-center justify-between py-3 px-5 my-4 mx-auto rounded-md bg-white drop-shadow-md w-[100%]"
     style="max-width: 1000px; position: fixed;top: 0;left: 50%; transform: translate(-50%); z-index:99;">
     <div class="logo w-[70px] h-[50px]">
       <img class="w-[100%] h-[100%]" src="../assets/img/watchify.png" alt="watchify">
     </div>
     <form action="/" class="bg-slate-100 rounded-md py-1 pr-3 flex items-center justify-between w-[30%] drop-shadow-sm">
-      <input type="search"
+      <input type="search" id="recherchZone"
         class="bg-transparent w-[90%] h-[25px] rounded-md pl-3 py-0.5 outline-none text-xs placeholder:text-xs"
         placeholder="Recherche..">
-      <i class="fa fa-search cursor-pointer"></i>
+      <i id="cata_recherche" class="fa fa-search cursor-pointer"></i>
     </form>
     <nav>
       <ul class="flex items-center" id="nav-menu">
@@ -38,7 +40,7 @@
             class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
             href="index.html">Accueil</a></li>
         <li class="link mr-5"><a
-            class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
+            class="text-sm tracking-wide font-normal text-blue-700 hover:text-blue-600 transition-colors ease-in-out"
             href="catalog.html">Catalogue</a></li>
         <li class="link mr-7"><a
             class="text-sm tracking-wide font-normal hover:text-blue-600 transition-colors ease-in-out"
@@ -122,11 +124,10 @@
         </select>
       </div>
 
-      <div class="space-x-2 w-[100%] flex items-center justify-between">
-        <label for="sort" class="text-gray-700 font-semibold">
-          Trier par :</label>
-        <select id="sort" class="px-4 py-2 rounded-md text-gray-700 cursor-pointer">
-          <option>----</option>
+      <div class="flex items-center space-x-2">
+        <label for="sort" class="text-gray-700 font-semibold">Trier par :</label>
+        <select id="sort" class="px-4 py-2 rounded-md text-gray-700">
+          <option value="all">----</option>
           <option value="price">Prix</option>
           <option value="stock">Quantité</option>
         </select>
@@ -140,16 +141,16 @@
     <div class="p-4 rounded-md shadow-lg w-1/5 hidden md:block space-y-4">
       <h3 class="text-lg mb-3">Filtrer par :</h3>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="samsung" value="Samsung" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="filterByBrand()">
+        <input type="checkbox" id="samsung" value="Apple" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="samsung" class="flex items-center space-x-2">
           <img src="../assets/img/apple.png" alt="Samsung" class="w-6 h-6">
           <span class="text-gray-700">Apple</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="samsung" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="samsung" value="Samsung" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="samsung" class="flex items-center space-x-2">
           <img src="../assets/img/samsung.png" alt="Samsung" class="w-6 h-6">
           <span class="text-gray-700">Samsung</span>
@@ -157,8 +158,8 @@
       </div>
 
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="apple" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="apple" value="Garmin" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="apple" class="flex items-center space-x-2">
           <img src="../assets/img/direction.png" alt="Apple" class="w-6 h-6">
           <span class="text-gray-700">Garmin</span>
@@ -166,64 +167,64 @@
       </div>
 
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="Fitbit" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/direction.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">Fitbit</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="Huawei" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">Huawei</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="Amazfit" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">Amazfit</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="Fossil" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">Fossil</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="Xiaomi" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/xiaomi.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">Xiaomi</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="Oppo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">Oppo</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="TicWatch" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/xiaomi.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">TicWatch</span>
         </label>
       </div>
       <div class="flex items-center space-x-3">
-        <input type="checkbox" id="oraimo" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
-          onclick="deselectOtherCheckboxes(this)">
+        <input type="checkbox" id="oraimo" value="Withings" name="marque" class="form-checkbox h-5 w-5 text-blue-600"
+          onclick="inselectBox(this);filtrerparmarque(this);">
         <label for="oraimo" class="flex items-center space-x-2">
           <img src="../assets/img/huawei.png" alt="Oraimo" class="w-6 h-6">
           <span class="text-gray-700">Withings</span>
@@ -239,7 +240,7 @@
   </section>
 
   <!-- Pagination -->
-  <section class="w-full flex justify-center lg:justify-end px-10 mb-20">
+  <section class="w-full flex justify-center lg:justify-end mb-12 mt-2">
     <div class="flex justify-center mt-8 lg:w-4/5 md:w-[100%] sm:w-[100%]">
       <nav class="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
         <!-- Previous Button -->
@@ -249,24 +250,25 @@
         </button>
 
         <!-- Page Numbers -->
-        <a href="#" aria-current="page"
+        <button id="btn_next1"
           class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
           1
-        </a>
-        <a href="#"
+        </button>
+        <button id="btn_next2"
           class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
           2
-        </a>
+        </button>
 
+        <button id="btn_next3"
+          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+          3
+        </button>
+        <button id="btn_next4"
+          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+          4
+        </button>
         <span class="px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-500">...</span>
-        <a href="#"
-          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
-          8
-        </a>
-        <a href="#"
-          class="relative inline-flex items-center px-4 py-2 border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">
-          9
-        </a>
+
 
         <!-- Next Button -->
         <button id="cata_btn_next"
@@ -279,23 +281,6 @@
   </section>
   <!-- fin du pagination  -->
 
-  <!-- <section class="bg-blue-950 py-10 px-10">
-    <div class="text-white flex md:justify-between justify-center items-center flex-wrap gap-5">
-      <div>
-        <h1 class="text-3xl font-semibold mb-3">Notre Newsletter</h1>
-        <p class="font-light text-sm">Recevoir notre vouveaux produit et mise à jour</p>
-      </div>
-      <form class="flex border-none p-2 bg-white rounded-md max-w-[500px]">
-        <input class="md:grow border-none outline-none px-5 text-black" type="email" name=""
-          placeholder="Email Example ..">
-        <button class="bg-blue-950 py-2 px-5 rounded-md hover:bg-blue-600" type="button">Subscribe</button>
-      </form>
-    </div>
-  </section> -->
-
-
-
-  <!--NewsLetter-->
   <section class="bg-blue-950 py-10 px-10">
     <div class="text-white flex md:justify-between justify-center items-center flex-wrap gap-5">
       <div>
@@ -310,6 +295,8 @@
     </div>
   </section>
   <!------------------------>
+
+
 
   <!----Footer----->
   <footer class="flex flex-col bg-black items-center py-8 md:px-20 px-10 ">
@@ -326,7 +313,9 @@
       <div>
         <h4 class="font-semibold mb-2">Account</h4>
         <ul>
-          <li class="font-thin mb-1.5"><a href="#">My Account</a></li>
+          <li class="font-thin mb-1.5">
+            <button="#">My Account</button=>
+          </li>
           <li class="font-thin mb-1.5"><a href="#">Login / Register</a></li>
           <li class="font-thin mb-1.5"><a href="#">Cart</a></li>
           <li class="font-thin mb-1.5"><a href="#">Wishlist</a></li>
