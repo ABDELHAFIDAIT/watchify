@@ -218,18 +218,18 @@ arrayPrd.map(Prd => {
                                     ]);
                 }
 
-                // Initialiser le document PDF
+                
                 const { jsPDF } = window.jspdf;
                 const devis = new jsPDF();
                 
-                // devis.addImage('./logo.png', 'PNG', 85, 10, 40, 20);
+                devis.addImage('../assets/img/logo.png', 'PNG', 90, 10, 30, 20);
 
-                // Ajouter le titre du devis
+                
                 devis.setFontSize(16);
                 devis.setFont('helvetica', 'bold');
                 devis.text('DEVIS DE VOTRE COMMANDE', 105, 40, { align: 'center' });
 
-                // Informations du client
+                
                 devis.setFontSize(12);
                 devis.setFont('helvetica', 'normal');
                 const clientInfo = [
@@ -245,7 +245,7 @@ arrayPrd.map(Prd => {
                     devis.text(`${info.value}`, 70, 60 + (index * 10));
                 });
 
-                // Utilisation de la fonction autoTable pour créer le tableau de commande
+                
                 devis.autoTable({
                     head: [['Article', 'Quantité', 'Prix Unitaire', 'Prix Total']],
                     body: devisProducts,
@@ -261,18 +261,18 @@ arrayPrd.map(Prd => {
                     }
                 });
 
-                // Afficher le total général
+                
                 devis.setFontSize(12);
                 devis.setFont('helvetica', 'bold');
                 devis.text("Total", 140, devis.lastAutoTable.finalY + 10);
                 devis.text(devisTotal.toFixed(2) + " $", 180, devis.lastAutoTable.finalY + 10, { align: 'right' });
 
-                // Message de remerciement
+                
                 devis.setFontSize(14);
                 devis.setFont('helvetica', 'bold');
-                devis.text('MERCI D’AVOIR CHOISI WATCHIFY', 105, devis.lastAutoTable.finalY + 30, { align: 'center' });
+                devis.text('MERCI D\'AVOIR CHOISI WATCHIFY', 105, devis.lastAutoTable.finalY + 30, { align: 'center' });
 
-                // Enregistrer le PDF sous le nom "devis_commande.pdf"
+                
                 devis.save('devis_commande.pdf');
             }
         });
